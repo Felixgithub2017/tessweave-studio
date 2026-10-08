@@ -16,8 +16,8 @@ dependencies = []
 model-workbench = "workbench.__main__:main"
 
 [project.urls]
-Repository = "https://github.com/Felixgithub2017/model-workbench"
-Issues = "https://github.com/Felixgithub2017/model-workbench/issues"
+Repository = "https://github.com/Felixgithub2017/tessweave-studio"
+Issues = "https://github.com/Felixgithub2017/tessweave-studio/issues"
 
 [tool.setuptools.packages.find]
 include = ["workbench*"]

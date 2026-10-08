@@ -2,7 +2,7 @@
 
 # TessWeave Studio
 
-**Model Workbench**, now the visual workspace in the TessWeave family. The repository `model-workbench`, Python module `workbench`, state directory `.workbench` and existing commands remain unchanged.
+**Model Workbench**, now the visual workspace in the TessWeave family. The repository is now **[tessweave-studio](https://github.com/Felixgithub2017/tessweave-studio)**. The Python module `workbench`, state directory `.workbench` and existing commands remain unchanged; existing local checkout directories do not need to be renamed.
 
 **Inspectable workflows for local and cloud model engineering.**
 
@@ -17,13 +17,15 @@ Model Workbench is a local-first graphical control plane for model discovery, do
 | Project | What it owns | What it does not imply |
 | --- | --- | --- |
 | **TessWeave Studio** (this repository) | Graphical model engineering, conditional resource planning, reviewed commands, backend orchestration, observations and logs | A new training kernel, universal model compatibility or automatically optimal plans |
-| [**TessWeave Engine**](https://github.com/Felixgithub2017/flow-inference) (formerly Flow Inference) | Independent low-concurrency inference scheduler, KV pages, Transformer forward pass, kernels and HTTP server | A fork/wrapper of vLLM/SGLang, certified H100 performance or production readiness |
+| [**TessWeave Engine**](https://github.com/Felixgithub2017/tessweave-engine) (formerly Flow Inference) | Independent inference scheduler targeting single-request latency and concurrent throughput, KV pages, Transformer forward pass, kernels and HTTP server | A fork/wrapper of vLLM/SGLang, certified H100 performance or production readiness |
 
 Studio is a **control plane** and Engine is an **inference runtime**. Both work independently. Studio can use existing third-party engines; using Studio does not require TessWeave Engine. Training continues to use reviewed external training frameworks, not the inference engine.
 
+[**TessWeave Train**](https://github.com/Felixgithub2017/tessweave-train), a separate project under development, adds goal-based post-training guidance, dataset contracts, reviewable SFT/DPO/PPO/GRPO commands and audited backend execution. Its first implementation is a CLI workflow over ms-swift, not a replacement training kernel. A guided Train UI in Studio is planned but not yet integrated; the current Studio training page has its existing support boundary.
+
 The current connection is an explicitly registered loopback HTTP service. One-click Engine launch/unload, dedicated Engine environment recipes, and native Engine-trace visualization are roadmap items, not implemented integration. See [connect Engine to Studio](docs/TESSWEAVE.md) for the exact endpoint, model ID and supported request settings.
 
-Public repositories: [Studio](https://github.com/Felixgithub2017/model-workbench) · [Engine](https://github.com/Felixgithub2017/flow-inference). Branding changes do not broaden the support matrix. [Brand assets and compatibility policy](docs/BRAND.md).
+Public repositories: [Studio](https://github.com/Felixgithub2017/tessweave-studio) · [Engine](https://github.com/Felixgithub2017/tessweave-engine) · [Train](https://github.com/Felixgithub2017/tessweave-train). Branding changes do not broaden the support matrix. [Brand assets and compatibility policy](docs/BRAND.md).
 
 ## Why this project
 
