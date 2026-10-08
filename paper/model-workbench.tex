@@ -1,0 +1,210 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue}
+\title{Model Workbench: An Inspectable Control Plane for Local and Cloud Model Engineering}
+\author{Authors and affiliations to be finalized}
+\date{October 7, 2026 --- Engineering report draft}
+\begin{document}
+\maketitle
+\begin{abstract}
+Model engineering spans artifact discovery, dependency provisioning, data preparation, resource estimation, training, compression, serving, and measurement. Individual engines provide powerful implementations, but the transitions between them often obscure the execution host, assumptions, commands, and evidence behind an experiment. We present Model Workbench, a local-first graphical control plane that exposes these transitions as inspectable plans and recorded jobs. The implementation combines metadata-only model inspection, conditional memory ledgers, constrained engine adapters, isolated environment provisioning, SSH-connected cloud workspaces, and provenance-aware inference observations. It delegates numerical execution to existing engines rather than introducing new optimization kernels. We describe the implemented execution boundaries, resource-accounting principles, and validation methodology. Current evidence concerns control-plane behavior and isolated integration fixtures, not model quality, GPU speedups, universal architecture support, or production reliability. This report identifies the hardware experiments required to evaluate those properties.
+\end{abstract}
+
+\section{Motivation and scope}
+A researcher may download a model successfully yet remain unable to identify the appropriate executable, dataset schema, serving format, or memory requirement. A running process can be mistaken for a usable endpoint, and a visually plausible performance chart can be mistaken for attributable measurement. These are workflow and evidence problems in addition to numerical computing problems.
+
+Workbench targets a single engineer operating a local workstation or an explicitly connected cloud GPU host. Its design objectives are: (1) make execution location and commands visible; (2) separate planning, execution, readiness, and evaluation; (3) preserve assumptions alongside resource estimates; and (4) expose measured observations without fabricating unavailable detail. These objectives motivate a bounded control plane, not a replacement for trainers, serving engines, cluster schedulers, or profilers.
+
+The current engineering preview does not claim universal Hugging Face compatibility. Inspection can recognize artifacts that an execution adapter cannot support. Unsupported combinations must remain distinguishable from untested combinations and from demonstrated runs. No new training algorithm, quantizer, attention kernel, or automatic optimal-topology algorithm is proposed.
+
+\section{Background and relationship to existing systems}
+Training frameworks implement differentiation, distributed execution, checkpointing, and optimization. Serving engines implement request scheduling, cache management, and hardware-specific execution. For example, vLLM introduces block-oriented KV memory management through PagedAttention~\cite{vllm}; SGLang combines a structured program interface with runtime techniques including prefix reuse~\cite{sglang}. Workbench delegates to these systems; their published performance is not a measurement of Workbench.
+
+Likewise, ZeRO partitions training states~\cite{zero}, LoRA trains low-rank parameter updates~\cite{lora}, and DPO optimizes preferences using paired responses~\cite{dpo}. Selecting such a recipe in a graphical interface does not reimplement the algorithm, prove compatibility with every model, or establish equivalent quality. The integration must bind a concrete model, data interpretation, framework version, and command.
+
+\section{System architecture}
+The control plane is implemented with a Python standard-library HTTP service and a browser interface. Heavy dependencies belong to separate execution environments. Model metadata can therefore be inspected before importing a training framework.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+Layer & Responsibility \\
+\midrule
+Browser workspaces & Independent model, data, resource, environment, training, compression, deployment, and evaluation views \\
+Planning service & Validate inputs, resolve authorized paths, select constrained adapters, persist commands and assumptions \\
+Job management & Start approved work, record output and state, manage owned processes \\
+Execution host & Local or remote environments, model files, engine processes, and hardware \\
+Evidence layer & Operation audit, job manifests, logs, service checks, observations, and benchmark reports \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Workspaces are not a mandatory wizard. An engineer can connect an existing endpoint without downloading a model, or inspect an offline package without deploying it. The deployment view explicitly offers persistent local-model selection and directory inspection, followed by environment and launch configuration.
+
+\subsection{Plans, jobs, and readiness}
+The conceptual lifecycle is
+\[
+\text{inputs} \longrightarrow \text{validated plan} \longrightarrow
+\text{confirmed job} \longrightarrow \text{process observations}.
+\]
+For inference, endpoint checking and generation validation follow separately. A successful plan means that the checked preconditions hold, not that a model fits in memory. A running process may still be loading weights. A successful model-list endpoint does not establish generation correctness. Finally, a completed request does not establish production capacity.
+
+Plans preserve the launch command and checked inputs. Execution rechecks relevant fingerprints and dataset identity. Existing output directories are rejected by applicable recipes rather than silently overwritten. The task record preserves the engine's original output; translated UI labels do not rewrite diagnostic text.
+
+\subsection{Artifact inspection}
+Inspection reads bounded configuration and safetensors metadata, without loading all weight payloads, importing repository Python, or deserializing pickle checkpoints. This reduces inspection cost and avoids treating downloaded code as trusted merely because it accompanies weights. Authorization applies to resolved filesystem paths, including symlink targets.
+
+Metadata is not ground truth for every architectural property. Quantized packed tensors can have storage shapes that differ from logical parameter shapes. Configuration may omit parameter counts or custom architecture details. Workbench must retain unknown values rather than infer certainty from a model name. Backend support remains a separate decision.
+
+\section{Conditional resource accounting}
+The planner is an explanatory estimate, not a feasibility certificate. All terms below describe assumptions; actual peaks depend on implementation, concurrency, allocator behavior, and execution schedule.
+
+\subsection{Weights and training states}
+For parameter count $P$ and storage bytes per parameter $b_w$, weight storage is
+\begin{equation}
+M_w=P b_w.
+\end{equation}
+For one common mixed-precision full-parameter Adam layout, BF16 weights and gradients use two bytes each, an FP32 master copy uses four, and two FP32 moments use eight:
+\begin{equation}
+M_{\mathrm{states}}=P(2+2+4+8)=16P.
+\end{equation}
+This is not a universal constant: gradient precision, master-copy policy, optimizer, sharding, and offload change it. As an arithmetic illustration, seven billion BF16 parameters occupy about $13.04$ GiB; the stated 16-byte layout occupies about $104.31$ GiB before activations or runtime allocations. These are calculations, not measured peaks.
+
+LoRA reduces trainable-state requirements but retains a base model. A rough decomposition is
+\begin{equation}
+M_{\mathrm{LoRA}}=P_{\mathrm{base}}b_{\mathrm{base}}+
+P_{\mathrm{adapter}}b_{\mathrm{trainable\ states}}+M_{\mathrm{other}}.
+\end{equation}
+MoE weight residency generally depends on total resident expert parameters, not merely the parameters active for one token. Expert activation influences compute but cannot justify substituting active parameters for resident weight storage.
+
+\subsection{KV cache and other memory}
+For conventional full-attention MHA/GQA layers with a uniform layout,
+\begin{equation}
+M_{\mathrm{KV}}=2 L H_{\mathrm{KV}} d_h N_{\mathrm{cached}} b_{\mathrm{KV}},
+\end{equation}
+where $L$ is the layer count, $H_{\mathrm{KV}}$ the KV-head count, $d_h$ the head width, and $N_{\mathrm{cached}}$ the total resident token count across sequences. The factor two represents keys and values. For example, $L=32$, $H_{\mathrm{KV}}=8$, $d_h=128$, $N_{\mathrm{cached}}=4096$, and two-byte elements give $0.5$ GiB before allocation overhead. Doubling resident sequences at equal length doubles this illustrative payload.
+
+Sliding-window layouts, latent attention, hybrid layers, cache quantization, prefix sharing, and allocation blocks need specific treatment. Applying the uniform formula blindly to all models is incorrect. A broader ledger is
+\begin{equation}
+M_{\mathrm{peak}}\approx M_{\mathrm{resident\ states}}+M_{\mathrm{activations}}
++M_{\mathrm{KV}}+M_{\mathrm{workspace}}+M_{\mathrm{communication}}
++M_{\mathrm{runtime}}+M_{\mathrm{margin}}.
+\end{equation}
+Not every term is simultaneously present in every workload. Activations depend on sequence length, microbatch, architecture, attention implementation, and recomputation. Optional budgets set to zero mean unbudgeted costs, not proven absence.
+
+\subsection{Parallelism and post-training roles}
+TP, PP, and data parallelism partition different objects. Dividing the whole ledger by the total number of GPUs incorrectly assumes perfect sharding of every allocation. Communication buffers, replicated components, and pipeline imbalance survive that division. Candidate layouts therefore require explicit assumptions and subsequent measurement of the actual interconnect and workload.
+
+Preference and reinforcement learning add model roles: policy, reference, reward, value, and rollout workers, depending on the algorithm. A useful planning abstraction is
+\begin{equation}
+M_{\mathrm{peak}}=\max_t\left[\sum_{r\in\mathcal R(t)}M_r(t)+M_{\mathrm{shared}}(t)\right],
+\end{equation}
+where $\mathcal R(t)$ contains simultaneously resident roles. This makes colocation and scheduling explicit. The current planner does not infer arbitrary role scheduling or prove an optimal placement.
+
+\section{Evidence-grounded training design}
+\subsection{Local research corpus and scope control}
+We maintain an offline source manifest, curated rules, and append-only retrieval receipts. The October 7, 2026 snapshot includes vendor reports, historical predecessors, Stanford CS336 materials, and public training records. A report, announcement, prospective run plan, and completed reproducible run are different evidence classes. A model card linking an older report is not sufficient evidence for the newer checkpoint's training hardware or schedule. Exact declared repository identifiers select release references; this is metadata matching, not checkpoint authentication.
+
+The archive records the requested and resolved URLs, retrieval time, byte count, SHA-256, and errors. Full texts without reviewed redistribution permission remain in the local archive rather than inheriting the project's software license. Distributed summaries, rules, and retrieval scripts support reproducibility without silently relicensing third-party documents. Planning reads only curated JSON, never executes downloaded content, and records the hashes of its rule and source manifests.
+
+\subsection{From reports to constraints, not copied recipes}
+CS336 motivates explicit resource accounting, parallelism tradeoffs, and empirically fitted scaling experiments~\cite{cs336}. Recent reports sharpen the limits of generic rules. DeepSeek-V4 uses a mixture of Muon and AdamW and changes its attention regime during length extension~\cite{deepseek4}; its states cannot be reproduced by blindly assigning an Adam layout to all parameters. GLM-5's mid-training schedule is not evidence for GLM-5.3-Flash~\cite{glm5}. Nemotron 3 Ultra interleaves short and long iterations in its extension phase~\cite{nemotron}, while Qwen3.5-Omni changes which components are trainable across phases~\cite{qwenomni}. We expose these as scoped references and validation obligations, not automatic backend certification. Unsupported optimizers are rejected by the Adam search.
+
+Marin's public large-MoE run plan illustrates a further coupling: increasing sequence length can reduce the number of independent examples contributing to expert routing~\cite{marin}. For target packed-token batch $B$ and sequence length $S$, $\lfloor B/S\rfloor$ is only an upper bound on packed sequences per update, not the number of independent documents. We expose this quantity and require per-expert load, token-drop, and all-to-all measurements at each MoE length stage. The public plan remains prospective; it is not evidence that the completed run followed that schedule.
+
+MiMo-V2.6 further distinguishes pretraining from mid-training and RL: its reported sequence curriculum begins at 32K rather than a universal 4K default, while later phases change the optimizer and include asynchronous rollouts~\cite{mimo}. Its frozen-router RL configuration is a scoped experimental recipe, not a universal optimization. These observations motivate keeping checkpoint history, proposed job settings, and supported execution adapters separate.
+
+\subsection{Constrained search and three distinct bottlenecks}
+A candidate is a tuple of supported backend family, TP, PP, CP, DP, EP, state-sharding stage, recomputation, and accumulation. Under the implemented nesting convention,
+\[
+N=\mathrm{TP}\,\mathrm{PP}\,\mathrm{CP}\,\mathrm{DP},\qquad
+\mathrm{EP}\mid\mathrm{DP}.
+\]
+EP therefore is not an additional independent multiplier. Divisibility, selected fabric, GPU ceiling, and effective batch constraints prune candidates before ranking. Current fast-domain search is conservative and node-bounded; it does not represent every rack-scale NVLink configuration. Likewise, uniform dense-layer timing is not used as a certificate for hybrid or sparse attention. Complete tensor inventories can still yield state-only capacity candidates with unknown activation peaks.
+
+The three checks are (i) memory capacity on every rank, (ii) HBM traffic versus effective memory bandwidth, and (iii) collective traffic versus measured interconnect bandwidth. Conceptually,
+\[
+T_{\mathrm{step}}\geq\max\{F/C_{\mathrm{eff}},\ Q_{\mathrm{HBM}}/B_{\mathrm{HBM}},\
+Q_{\mathrm{net}}/B_{\mathrm{net}}\},
+\]
+but this lower bound is not an overlap model: bubbles, dependencies, conversion, imbalance, and scheduling add cost. Our bounded search reports conditional timing ranges, not an optimal schedule proof. Missing measured compute/bandwidth inputs leave time/cost recommendations unavailable instead of substituting advertised peak throughput. Minimum capacity, estimated cost, and deadline feasibility are separate objectives.
+
+\subsection{Curriculum and calibration loop}
+For every proposed phase, the planner reruns the resource search at that phase's sequence length. The engineering token shares are explicitly heuristic and are not claimed to be shares published in the cited reports. Exact release references appear separately; CPT or SFT does not automatically replay historical pretraining. Transition gates include stable gradients/loss, short-task retention, target-length evaluations, peak memory, throughput, and checkpoint recovery. MoE adds routing measurements; multimodal phases require token-expansion and trainable-mask accounting; RL requires separate model-role planning rather than a single-model estimate.
+
+Before a large allocation we require a small scaling ladder, warmup followed by at least twenty steady-state steps, and a save/resume comparison. The twenty-step minimum is an engineering smoke-test policy, not a claim from the reports or sufficient evidence of convergence. Measurements replace assumed bandwidth and throughput before reranking. This evidence-to-constraint loop is implemented; numerical validation on rented multi-GPU hardware remains outstanding.
+
+\section{Execution adapters and environment provisioning}
+Training recipes currently target a constrained ms-swift 4.5.x integration for continued pretraining, SFT, DPO, and mathematical-reward GRPO. PPO execution is blocked pending complete role orchestration. RLHF is a workflow family, not a single interchangeable dataset schema. Data guides explain structures; structural validation does not establish semantic quality or reward correctness.
+
+Serving adapters launch vLLM, SGLang, or MLX LM in a selected environment. Current NVIDIA deployment recipes use a single-instance TP configuration with GPU-count and architectural checks. MLX serves supported text configurations on Apple Silicon. Compression recipes produce separate artifacts; format and backend compatibility are checked independently of model discovery. Lower precision can reduce storage without improving latency when conversion or unsupported kernels dominate.
+
+Environment provisioning creates a fresh venv, resolves binary-wheel dependencies, records resolver output and exact versions, installs, and runs package and device checks. It does not install drivers, invoke privileged setup, or silently overwrite an environment. A version record improves traceability but is not an immutable hash-enforced wheelhouse. Successful imports do not certify a model on a particular GPU.
+
+\subsection{Cloud execution}
+A cloud connection uses a configured SSH alias with host-key checking and noninteractive key authentication. It uploads application source, not model weights or private keys, to a dedicated remote workspace. The remote control plane binds to loopback and is reached through a local SSH tunnel. Downloads and execution then occur on the remote host.
+
+The tunnel and remote workload have distinct lifecycles: disconnecting the tunnel does not stop cloud jobs or billing. The implementation is not a fleet scheduler, cloud-instance manager, or multi-tenant service. Remote lifecycle automation beyond the implemented connection flow remains future work.
+
+\section{Observability and experimental semantics}
+Workbench separates host observations, engine metrics, request events, and imported profiler traces. Host network counters are not NCCL attribution; GPU utilization is not per-request utilization. Apple driver observations are best-effort driver-level signals, not dedicated CUDA-style model VRAM. Engine metrics depend on the exposed version and preserve labels rather than indiscriminately summing series.
+
+For client timestamps $t_0$, $t_f$, and $t_e$, request observations include
+\begin{equation}
+T_{\mathrm{first}}=t_f-t_0,\qquad
+T_{\mathrm{request}}=t_e-t_0,\qquad
+R_{\mathrm{e2e}}=\frac{N_{\mathrm{output}}}{T_{\mathrm{request}}}.
+\end{equation}
+The first stream event can contain reasoning rather than visible answer text; these events are distinguished. Output-token counts must come from engine usage, not the number of streaming events. End-to-end token rate is not pure decode throughput.
+
+The bounded benchmark uses closed-loop concurrency. It does not reproduce arbitrary arrival distributions or establish an SLO under overload. Profiler replay displays recorded events and shapes when available; it does not reconstruct every intermediate matrix value or automatically associate every kernel with one conversation. Observation records and trace identity support inspection, but are not cryptographically tamper-proof evidence.
+
+\section{Validation and required hardware evaluation}
+The repository includes automated tests for core planning, catalog metadata, data guides, downloads, resource accounting, persistent model choices, services, benchmarking, observability, and infrastructure workflows. Isolated fixtures exercise remote bootstrap semantics without claiming validation on a rented GPU server. Synthetic service and trace fixtures validate control-plane behavior, not numerical performance.
+
+This report intentionally provides no GPU speedup table. A defensible evaluation requires the following experiment families:
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+Experiment & Required evidence \\
+\midrule
+Local small text model & Exact artifact, MLX version, memory peak, streamed correctness, restart behavior \\
+Single-GPU dense model & Backend versions, baseline and quantized quality, identical workloads, latency and peak memory \\
+Multi-GPU MoE & Total/active parameters, actual topology, cache and communication observations, successful load and generation \\
+Training and post-training & Dataset identity, short-run loss/reward, checkpoint reload, evaluation, role-specific memory \\
+Failure and recovery & Interrupted downloads, failed installations, OOM, process termination, SSH disconnection and reconnection \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Each run should retain commands, dependency records, hardware, model revision, precision, input/output-length distributions, concurrency, warmup, failures, and repeated measurements. Engine comparisons require equal workloads and quality checks. Passing a short run demonstrates operability, not convergence or production robustness. The table is an evaluation protocol, not completed experimental results.
+
+\section{Security, limitations, and reproducibility}
+The control plane uses session credentials, loopback binding, origin/host checks, authorized filesystem roots, and constrained operations. Broadly authorizing the filesystem increases exposure. Logs can contain prompts, training data, or third-party diagnostics; credential redaction does not constitute comprehensive data-loss prevention. Users remain responsible for artifact and dataset licenses.
+
+Direct-download clients disable implicit HTTP proxies, but VPN or transparent routing may still intercept traffic. The current interface lacks a general private/gated repository credential manager. Download provenance and provider metadata can change. This draft does not provide an archival repository URL, release DOI, or immutable source revision; these must be supplied before submission.
+
+Important missing capabilities include universal multimodal execution, arbitrary distributed training orchestration, production authentication and multi-tenancy, automatic optimal placement, comprehensive recovery guarantees, and hardware-certified backend combinations. The text playground and bounded benchmark should not be represented as general multimodal or production load-testing systems.
+
+\section{Conclusion}
+Model Workbench organizes existing engines around explicit execution plans, conditional resource accounts, and inspectable evidence. Its principal contribution is a workflow design and implementation boundary: the interface should reveal what will execute, where it will execute, and what the resulting observations actually establish. Hardware validation, immutable experiment releases, and broader audited adapters are necessary next steps before making production or performance claims.
+
+\begin{thebibliography}{99}
+\bibitem{cs336} Stanford University. CS336: Language Modeling from Scratch, Spring 2026. \url{https://cs336.stanford.edu/}.
+\bibitem{deepseek4} DeepSeek-AI. DeepSeek-V4 Technical Report. 2026. \url{https://arxiv.org/abs/2606.19348v1}.
+\bibitem{glm5} GLM Team. GLM-5: from Vibe Coding to Agentic Engineering. 2026. \url{https://arxiv.org/abs/2602.15763}.
+\bibitem{nemotron} NVIDIA. Nemotron 3 Ultra Technical Report. 2026. \url{https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/}.
+\bibitem{qwenomni} Qwen Team. Qwen3.5-Omni Technical Report. 2026. \url{https://arxiv.org/abs/2604.15804}.
+\bibitem{marin} Marin Community. Hero Run public training plan, issue 8435. 2026. \url{https://github.com/marin-community/marin/issues/8435}. Ongoing plan, retrieved October 7, 2026.
+\bibitem{mimo} LLM-Core Xiaomi. MiMo-V2.6: Scaling Reinforcement Learning Towards Self-Improvement. 2026. \url{https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL}.
+\bibitem{vllm} W. Kwon et al. Efficient Memory Management for Large Language Model Serving with PagedAttention. 2023. \url{https://arxiv.org/abs/2309.06180}.
+\bibitem{sglang} L. Zheng et al. SGLang: Efficient Execution of Structured Language Model Programs. 2023. \url{https://arxiv.org/abs/2312.07104}.
+\bibitem{zero} S. Rajbhandari et al. ZeRO: Memory Optimizations Toward Training Trillion Parameter Models. 2019. \url{https://arxiv.org/abs/1910.02054}.
+\bibitem{lora} E. J. Hu et al. LoRA: Low-Rank Adaptation of Large Language Models. 2021. \url{https://arxiv.org/abs/2106.09685}.
+\bibitem{dpo} R. Rafailov et al. Direct Preference Optimization: Your Language Model is Secretly a Reward Model. 2023. \url{https://arxiv.org/abs/2305.18290}.
+\end{thebibliography}
+\end{document}

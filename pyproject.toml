@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "model-workbench"
+version = "0.1.0"
+description = "Local-first model inspection, resource planning and industrial backend orchestration"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE", "docs/marked-LICENSE.txt", "docs/dompurify-LICENSE.txt"]
+dependencies = []
+
+[project.scripts]
+model-workbench = "workbench.__main__:main"
+
+[project.urls]
+Repository = "https://github.com/Felixgithub2017/model-workbench"
+Issues = "https://github.com/Felixgithub2017/model-workbench/issues"
+
+[tool.setuptools.packages.find]
+include = ["workbench*"]
+
+[tool.setuptools.package-data]
+workbench = ["static/*", "knowledge/*.json", "knowledge/model_snapshots/*.json"]

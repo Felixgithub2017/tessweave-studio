@@ -1,0 +1,7 @@
+TessWeave Studio / Model Workbench
+
+Project-authored code and branding are licensed under MIT; see LICENSE.
+Bundled marked.js retains its upstream license in docs/marked-LICENSE.txt.
+Bundled DOMPurify retains its upstream license in docs/dompurify-LICENSE.txt.
+Redistributed reference documents have separate terms; see knowledge/THIRD_PARTY_NOTICES.md.
+Third-party model weights, datasets and runtime engines are not relicensed by this project.

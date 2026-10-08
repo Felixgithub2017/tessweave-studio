@@ -1,0 +1,23 @@
+.venv*/
+__pycache__/
+*.pyc
+.workbench/
+*.egg-info/
+dist/
+build/
+.DS_Store
+.knowledge-cache/
+.env
+.env.*
+*.pem
+*.key
+*.log
+*.sqlite3
+models/
+checkpoints/
+runs/
+# Historical local screenshots are retained on disk, not bulk-published.
+docs/*.png
+!docs/deployment-guide-preview.png
+!docs/workbench-preview.png
+docs/gemma4-mlx-smoke-2026-10-06.json
