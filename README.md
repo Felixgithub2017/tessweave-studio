@@ -1,4 +1,4 @@
-![TessWeave Studio — local-first model engineering](assets/brand/banner.svg)
+![TessWeave — official blue, cyan and violet woven identity](workbench/static/tessweave-brand.jpg)
 
 # TessWeave Studio
 

@@ -1,14 +1,23 @@
 # TessWeave identity and compatibility
 
+![Current TessWeave identity](../workbench/static/tessweave-brand.jpg)
+
 **TessWeave** combines the idea of a tessellated tensor tile with weaving an execution path. **Engine** identifies the independent inference runtime; **Studio** identifies the visual model-engineering control plane.
 
-The original geometric mark shows tile-like lanes converging into a forward chevron. Midnight blue `#0B1224`, tensor cyan `#65F5DC`, and violet `#9295FF` form the palette. The mark remains static, readable at small sizes, and independent of external fonts or image services. Banner graphics are conceptual branding, not live telemetry.
+The current identity is the user-supplied interwoven T/W symbol in blue, cyan and
+violet, with a dark navy **TessWeave** wordmark on white. It replaces the earlier
+forward-chevron design. Repository documentation and the Studio sidebar use the
+same image, without redrawing or substituting a different symbol.
 
-- `assets/brand/mark.svg`: scalable square mark, suitable for icons.
-- `assets/brand/banner.svg`: dark repository header with product descriptor.
-- Studio packages the same mark as `workbench/static/tessweave.svg`.
+- Canonical image: [`workbench/static/tessweave-brand.jpg`](../workbench/static/tessweave-brand.jpg), 1300 × 520 pixels. README and the Chinese user guide reference this file directly; there is no separate documentation copy to drift out of date.
+- Display the complete image at its original aspect ratio. Preserve its white background, spacing, symbol and wordmark; do not stretch it or recolor it for a dark panel. This JPEG is not a vector or transparent-background asset.
+- Coordinated UI colors: navy `#071536`, blue `#0068E8`, cyan `#27C1EC`, violet `#7045ED`. These are interface design tokens, not a claim that every gradient pixel has these exact values.
+- `assets/brand/mark.svg`, `assets/brand/banner.svg` and `workbench/static/tessweave.svg` are **legacy chevron assets**, retained for existing paths only. Do not use them in new documentation or as the current logo. The historical SVG endpoint does not define the current identity.
 
-These project-authored SVG assets use the repository's MIT license. Do not use the identity to imply upstream vendor endorsement or unmeasured speedups. A preliminary exact-name web search on 2026-10-08 found no result for TessWeave; this is **not** trademark clearance or a guarantee of name/domain availability.
+Use the supplied identity consistently; do not imply upstream vendor endorsement,
+unmeasured speedups or trademark clearance. Repository licensing is not a
+trademark registration or a guarantee of name/domain availability. Interface
+screenshots are demonstrations, not live GPU telemetry or deployment certification.
 
 ## Compatibility
 

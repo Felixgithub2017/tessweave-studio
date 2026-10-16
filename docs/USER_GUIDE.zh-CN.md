@@ -1,4 +1,6 @@
-# Model Workbench 使用说明书
+![TessWeave](../workbench/static/tessweave-brand.jpg)
+
+# TessWeave Studio 使用说明书
 
 ## Studio 规划器快速上手
 
