@@ -1,5 +1,17 @@
 # Real inference observability / 真实推理观测
 
+## TessWeave Decode Inspector
+
+Playground links to the selected loopback service's `/inspector` page. This route
+is provided by TessWeave Engine only (start it with `--decode-trace NEW.jsonl`),
+not by an arbitrary MLX/vLLM/SGLang server. It offers request/round/layer drilldown,
+semantic host timelines and offline replay. Engine `tools/profile_mac.py` exports
+standalone synchronized MLX diagnostic reports; these are not Metal kernel times.
+`tools/profile_native.py` captures CPU/CUDA profiler events and uses explicit
+correlation IDs where available. Raw CUDA evidence still requires a CUDA host.
+This is a link to the engine UI, not an assertion that Studio's older trace importer
+now understands every engine capture format or automatically maps chat IDs.
+
 ## What is measured
 
 | Source | Scope | Supported output |

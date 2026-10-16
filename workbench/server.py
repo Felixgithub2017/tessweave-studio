@@ -16,6 +16,8 @@ from . import __version__
 from .adapters import recipe
 from .benchmark import run_benchmark
 from .data import EXAMPLES, validate_dataset, dataset_guide
+from .post_training import design_course
+from .scenarios import scenario_plan
 from .model_library import ModelLibrary
 from .model_reference import model_identity
 from .hardware import local_probe, remote_probe
@@ -27,11 +29,13 @@ from . import hub
 from .planning import METHODS, estimate
 from .audit import Audit, clean
 from .resources import GPUS, plan_resources
+from .serving_plan import plan_serving
 from .services import Services
 from .profiler import read_trace
 from .environments import environment_plan, conda_installations
 from .environment_inventory import scan as scan_environments, assess as assess_environments
 from .cloud import cloud_plan
+from .execution_targets import identity as host_identity, targets as execution_targets
 
 
 class App:
@@ -145,9 +149,33 @@ class App:
             raise
 
     def dispatch(self, path, body, query):
+        if path == '/api/scenarios/plan':
+            return scenario_plan(body)
+        if path == '/api/execution-targets':
+            return execution_targets(self.jobs)
         if path == '/api/modelchoices':
-            return self.model_library.list(body.get('include_featured',False))
+            rows=self.model_library.list(body.get('include_featured',False))
+            if body.get('include_featured',False):
+                from .engine_deployment import models
+                try: pinned=models()
+                except ValueError: pinned=[]
+                ids={m['repo'] for m in pinned}
+                rows=[m for m in rows if m.get('repo') not in ids or m.get('kind')=='local']+pinned
+            from .deployment_recipes import coverage
+            from .model_metadata import with_bundled_metadata
+            rows=[with_bundled_metadata(m) for m in rows]
+            return [dict(m,planning_support=coverage(m)) for m in rows]
         if path == '/api/modelchoices/select':
+            if body['key'].startswith('deployment:'):
+                from .engine_deployment import model
+                selected=self.model_library.records.get(body['key']) or model(body['key'])
+                if selected is None:raise ValueError('Unknown deployment model')
+                from .model_metadata import with_bundled_metadata
+                selected=with_bundled_metadata(selected)
+                if body.get('refresh'):
+                    from .model_metadata import resolve
+                    selected=resolve(self.model_library,selected,refresh=True,source=body.get('source') or 'huggingface')
+                return dict(selected,identity=model_identity(selected))
             selected=self.model_library.get(body['key'])
             if selected['kind']=='local':
                 model=inspect_model(selected['path'],self.roots)
@@ -243,15 +271,38 @@ class App:
             return scan_directory(body["path"],self.roots)
         if path == "/api/techniques":
             return technique_guide(body.get("backend","vllm"),body.get("method","awq"))
+        if path == '/api/serving/plan':
+            return plan_serving(body)
+        if path in ('/api/deployment/catalog', '/api/deployment/plan', '/api/deployment/tutorial'):
+            from .engine_deployment import engine, plan
+            if path.endswith('/catalog'): return engine().catalog()
+            if path.endswith('/tutorial'): return {'markdown': engine().tutorial(body['model'])}
+            return plan(body)
         if path == "/api/resources":
             model = inspect_model(body["model_path"], self.roots) if body.get("model_path") else None
             if model is None and body.get('model_key'):
-                from .model_metadata import resolve
-                model=resolve(self.model_library,self.model_library.get(body['model_key']),offline=True)
-            return plan_resources(body, model)
+                if body['model_key'].startswith('deployment:'):
+                    from .engine_deployment import model as pinned_model
+                    model=self.model_library.records.get(body['model_key']) or pinned_model(body['model_key'])
+                    if model is None:raise ValueError('Unknown deployment model')
+                    from .model_metadata import with_bundled_metadata
+                    model=with_bundled_metadata(model)
+                else:
+                    from .model_metadata import resolve
+                    model=resolve(self.model_library,self.model_library.get(body['model_key']),offline=True)
+            result=plan_resources(body, model)
+            if body.get('task')=='inference' and body.get('model_key','').startswith('deployment:'):
+                from .engine_deployment import engine
+                target=body.get('deployment_target','gpu')
+                hw=body.get('gpu','h100') if target=='gpu' else target
+                result['deployment_recipe']=engine().deployment_plan(model['repo'],hw,bits=body.get('bits',16),context=body.get('seq'),concurrency=body.get('batch',1),memory_gib=body.get('edge_memory_gib') if target!='gpu' else None,devices=1)
+            return result
         if path == '/api/data/guide':
             model = inspect_model(body['model_path'], self.roots) if body.get('model_path') else None
             return dataset_guide(body.get('task','sft'),model,body.get('language','en'))
+        if path == '/api/post-training/design':
+            model = inspect_model(body['model_path'], self.roots, all_tensors=True)
+            return design_course(model, body)
         if path == '/api/environment/plan':
             return self.jobs.create(environment_plan(body,self.roots,self.jobs.state))
         if path == '/api/environment/scan':
@@ -269,12 +320,15 @@ class App:
             if not access.exists():raise ValueError('Cloud workspace is still connecting; inspect task log')
             return json.loads(access.read_text())
         if path == "/api/info":
+            from .edge_planning import EDGE_DEVICES
             return {"version": __version__, "hostname":__import__('platform').node(), "roots": self.roots, "state": str(self.jobs.state),
+                    "edge_catalog": EDGE_DEVICES,
                     "gpu_catalog": GPUS, "audit_path": str(self.audit.path), "native_terminal": sys.platform == "darwin",
                     "apple_silicon": sys.platform == 'darwin' and __import__('platform').machine() == 'arm64',
                     "conda_installations": conda_installations(),
                     "python": sys.executable, "examples": EXAMPLES, "methods": METHODS,
-                    "execution_host": "控制台运行主机；不是远端探测所选服务器",
+                    "execution_target": host_identity(self.jobs.state),
+                    "execution_host": "All operations execute on this workspace host; hardware probe alone does not switch hosts.",
                     "download_sources": hub.SOURCES, "model_authors": hub.AUTHORS,"model_vendors":hub.VENDORS}
         if path == "/api/catalog":
             cache = self.jobs.state/"catalog.json"
@@ -400,20 +454,28 @@ def make_server(app, port=8765):
                     if not 0 < size <= 1024*1024:
                         return self.send(413, {"error": "body too large/empty"})
                     body = json.loads(self.rfile.read(size))
-                elif parsed.path not in ("/api/info", "/api/hardware", "/api/jobs", "/api/job", "/api/logs", "/api/reports", "/api/downloads", "/api/catalog", "/api/audit", "/api/services"):
+                elif parsed.path not in ("/api/info", "/api/execution-targets", "/api/hardware", "/api/jobs", "/api/job", "/api/logs", "/api/reports", "/api/downloads", "/api/catalog", "/api/audit", "/api/services"):
                     return self.send(405, {"error": "POST required"})
                 return self.send(200, app.api(parsed.path, body, parse_qs(parsed.query)))
             static = {"/marked.js":"marked.js", "/purify.js":"purify.js", "/": "workspace.html", "/classic":"index.html", "/workspace.js":"workspace.js", "/workspace.css":"workspace.css", "/locales.js":"locales.js", "/terminal": "terminal.html", "/app.js": "app.js", "/style.css": "style.css", "/terminal.js": "terminal.js", "/models.js": "models.js", "/resources.js": "resources.js", "/compact.css": "compact.css", "/guides.js":"guides.js"}
             static["/tessweave.svg"] = "tessweave.svg"
+            static["/tessweave-brand.jpg"] = "tessweave-brand.jpg"
+            static["/host_switch.js"] = "host_switch.js"
+            static["/academy.js"] = "academy.js"
+            static["/academy.css"] = "academy.css"
+            static["/post_training.js"] = "post_training.js"
+            static["/scenarios.js"] = "scenarios.js"
             if parsed.path not in static or self.command != "GET":
                 return self.send(404, {"error": "not found"})
             f = Path(__file__).parent/"static"/static[parsed.path]
-            mime = {".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".svg": "image/svg+xml"}[f.suffix]
+            mime = {".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".jpg": "image/jpeg", ".svg": "image/svg+xml"}[f.suffix]
             self.send(200, f.read_bytes(), mime)
 
         def do_GET(self):
             try:
                 self.handle_request()
+            except (BrokenPipeError, ConnectionResetError):
+                pass  # Navigation may close an in-flight metadata response.
             except (ValueError, KeyError, TypeError, OSError) as e:
                 self.send(400, {"error": str(e)[:1000]})
             except Exception:

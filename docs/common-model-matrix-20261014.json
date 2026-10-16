@@ -1,0 +1,2500 @@
+[
+  {
+    "repo": "deepseek-ai/DeepSeek-V4-Pro",
+    "revision": "b5968e9190ef611bbf34a7229255be88a0e937c1",
+    "results": {
+      "train/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 2980.2322387695312,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 2980.2322387695312,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 2980.2322387695312,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 2980.2322387695312,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 745.0580596923828,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 745.0580596923828,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 2980.2322387695312,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 2980.2322387695312,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 1490.1161193847656,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 1490.1161193847656,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 745.0580596923828,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 745.0580596923828,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      }
+    }
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+    "revision": "b61f21852680ee02a29e946e18cf8697f4844061",
+    "results": {
+      "train/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 1899.8980522155762,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 1899.8980522155762,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 1899.8980522155762,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 1899.8980522155762,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 474.97451305389404,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 474.97451305389404,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 1899.8980522155762,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 1899.8980522155762,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 949.9490261077881,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 949.9490261077881,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 474.97451305389404,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 474.97451305389404,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      }
+    }
+  },
+  {
+    "repo": "zai-org/GLM-5",
+    "revision": "c183ef8c61faee82855eca1ed9bb3a9a7ce3b0b2",
+    "results": {
+      "train/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 1404.181381702423,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 1404.181381702423,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 1404.181381702423,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 1404.181381702423,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 351.0453454256058,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 351.0453454256058,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 1404.181381702423,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 1404.181381702423,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 702.0906908512115,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 702.0906908512115,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 351.0453454256058,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 351.0453454256058,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      }
+    }
+  },
+  {
+    "repo": "meta-llama/Llama-3.1-405B",
+    "revision": null,
+    "results": {
+      "train/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing."
+        ],
+        "weight_payload_gib": 754.3712854385376,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing."
+        ],
+        "weight_payload_gib": 754.3712854385376,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing."
+        ],
+        "weight_payload_gib": 754.3712854385376,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing."
+        ],
+        "weight_payload_gib": 754.3712854385376,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing."
+        ],
+        "weight_payload_gib": 188.5928213596344,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Supply layer count, hidden width, attention heads, FFN width and vocabulary from config; no size-based guessing."
+        ],
+        "weight_payload_gib": 188.5928213596344,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 754.3712854385376,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 754.3712854385376,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 377.1856427192688,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 377.1856427192688,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 188.5928213596344,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 188.5928213596344,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      }
+    }
+  },
+  {
+    "repo": "zai-org/GLM-5.3-Flash-BF16",
+    "revision": "a5b45eb41df6402735dedc900be14a42e8d5e538",
+    "results": {
+      "train/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 598.51078575477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 598.51078575477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 598.51078575477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 598.51078575477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 149.6276964386925,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 149.6276964386925,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 598.51078575477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 598.51078575477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 299.255392877385,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 299.255392877385,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 149.6276964386925,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 149.6276964386925,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      }
+    }
+  },
+  {
+    "repo": "Qwen/Qwen3-235B-A22B",
+    "revision": "8efa61729e24bd65b1d152b5ab5409052aa80e65",
+    "results": {
+      "train/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 437.8960180282593,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 437.8960180282593,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 437.8960180282593,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 437.8960180282593,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 109.47400450706482,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 109.47400450706482,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 437.8960180282593,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 437.8960180282593,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 218.94800901412964,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 218.94800901412964,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 109.47400450706482,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 109.47400450706482,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      }
+    }
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-M2",
+    "revision": "757303d492a50514c312788b5247a4f696a4c6a3",
+    "results": {
+      "train/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 428.4083843231201,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 428.4083843231201,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 428.4083843231201,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 428.4083843231201,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 107.10209608078003,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "MoE requires routed-expert parameter fraction and top-k (shared experts belong in the dense fraction)."
+        ],
+        "weight_payload_gib": 107.10209608078003,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 428.4083843231201,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 428.4083843231201,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 214.20419216156006,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 214.20419216156006,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 107.10209608078003,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 107.10209608078003,
+        "parameter_source": "user_or_nominal",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      }
+    }
+  },
+  {
+    "repo": "Qwen/Qwen3-32B",
+    "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+    "results": {
+      "train/full/16/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 61.02420997619629,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/full/16/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 61.02420997619629,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 61.02420997619629,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 61.02420997619629,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 15.256052494049072,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 15.256052494049072,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 61.02420997619629,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 61.02420997619629,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 30.512104988098145,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 30.512104988098145,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 15.256052494049072,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 15.256052494049072,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      }
+    }
+  },
+  {
+    "repo": "google/gemma-4-31B-it",
+    "revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+    "results": {
+      "train/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled."
+        ],
+        "weight_payload_gib": 58.25066729635,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled."
+        ],
+        "weight_payload_gib": 58.25066729635,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled."
+        ],
+        "weight_payload_gib": 58.25066729635,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled."
+        ],
+        "weight_payload_gib": 58.25066729635,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled."
+        ],
+        "weight_payload_gib": 14.5626668240875,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit.",
+          "Hybrid attention, MLA or non-text architecture needs an architecture-specific activation/compute adapter; ordinary dense-attention estimate disabled."
+        ],
+        "weight_payload_gib": 14.5626668240875,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 58.25066729635,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 58.25066729635,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 29.125333648175,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 29.125333648175,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 14.5626668240875,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "结构缺失或不是标准全注意力缓存；需架构专用/实测逐 rank 缓存与峰值适配器。",
+          "未有此架构的逐卡部署适配器；通用 TP/PP 数字不构成可运行方案。"
+        ],
+        "weight_payload_gib": 14.5626668240875,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      }
+    }
+  },
+  {
+    "repo": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "results": {
+      "train/full/16/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 15.256433486938477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/full/16/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 15.256433486938477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 15.256433486938477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 15.256433486938477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 3.814108371734619,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 3.814108371734619,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 15.256433486938477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 15.256433486938477,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 7.628216743469238,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 7.628216743469238,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 3.814108371734619,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 3.814108371734619,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      }
+    }
+  },
+  {
+    "repo": "Qwen/Qwen3-0.6B",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "results": {
+      "train/full/16/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 1.4000244140625,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/full/16/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 1.4000244140625,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 1.4000244140625,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/lora/16/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 1.4000244140625,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/4096": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 0.350006103515625,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "train/qlora/4/32768": {
+        "status": "partial",
+        "blockers": [
+          "Joint search currently covers full-parameter Adam; LoRA/QLoRA remain in the separate capacity audit."
+        ],
+        "weight_payload_gib": 0.350006103515625,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 1.4000244140625,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/16/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 1.4000244140625,
+        "parameter_source": "metadata",
+        "weight_bits": 16,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 0.70001220703125,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/8/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 0.70001220703125,
+        "parameter_source": "metadata",
+        "weight_bits": 8,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/4096": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 0.350006103515625,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      },
+      "inference/full/4/32768": {
+        "status": "estimated",
+        "blockers": [],
+        "weight_payload_gib": 0.350006103515625,
+        "parameter_source": "metadata",
+        "weight_bits": 4,
+        "execution_verified": false,
+        "excludes": [
+          "quantization_metadata",
+          "KV_cache",
+          "activations",
+          "optimizer",
+          "gradients",
+          "runtime"
+        ]
+      }
+    }
+  }
+]

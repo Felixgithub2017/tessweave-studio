@@ -13,6 +13,17 @@ GPUS = {
 }
 
 
+# Use the same curated GPU names/capacities as the Engine without replacing
+# established fabric notes. Capacity presets are not driver/backend approval.
+from .engine_deployment import engine as _catalog_engine
+try:
+    for _h in _catalog_engine().catalog()['hardware']:
+        if _h['category']=='gpu' and _h['memory_gib']:
+            GPUS.setdefault(_h['id'],dict(name=_h['name'],gib=_h['memory_gib'],fabric='实际互联/驱动/分片支持待核验'))
+except ValueError:
+    pass
+
+
 def number(body, key, default, low, high, integer=False):
     raw=body.get(key,default)
     if isinstance(raw,bool):
@@ -27,14 +38,83 @@ def number(body, key, default, low, high, integer=False):
 
 
 def plan_resources(body, model=None):
+    # Explicit user lengths win. Config already declares its effective position
+    # limit; do not multiply RoPE scaling again or infer it from a model name.
+    cfg = (model or {}).get('config', {})
+    if isinstance(cfg.get('text_config'),dict):
+        model=dict(model,full_config=cfg,config=cfg['text_config'])
+        cfg=model['config']
+    if body.get('task')=='inference' and model and not model.get('parameter_estimate') and body.get('parameters_b',7) in ('',None,0):
+        # Public recipe evidence does not require a guessed parameter count.
+        # Return no numerical capacity fields until logical parameters exist.
+        from .deployment_recipes import assessment
+        from .deployment_routes import route
+        return dict(route_only=True,deployment_route=route(body,model,assessment(model)),
+                    reason='缺少可靠逻辑参数量，尚不计算权重或显存；部署路线仍可查看。')
+    declared = cfg.get('max_position_embeddings') or cfg.get('model_max_length')
+    if body.get('task') == 'inference' and 'seq' not in body and isinstance(declared, int) and not isinstance(declared, bool) and 128 <= declared <= 10000000:
+        body = dict(body, seq=declared)
+    result = _plan_with_architecture(body, model)
+    if 'edge_plan' in result:
+        return result
+    # A nominal payload remains useful when architecture-specific placement is
+    # unavailable, but must never be mistaken for a GPU count or executable plan.
+    train = body.get('task', 'train') == 'train'
+    design = result.get('training_design', {})
+    blockers = list(design.get('blockers', [])) if train else list(result.get('deployment_envelope', {}).get('blockers', []))
+    if not train and not result['deployment_support']['analytic_supported']:
+        blockers.append(result['deployment_support']['reason'])
+    p = (model or {}).get('parameter_estimate')
+    observed = p is not None
+    if p is None:
+        p = number(body, 'parameters_b', 7, .000001, 100000) * 1e9
+    bits = 4 if train and body.get('mode') == 'qlora' else number(body, 'bits', 16, 4, 16, True)
+    incomplete = design.get('status') != 'estimated' if train else not result.get('deployment_envelope', {}).get('target')
+    result['planning_coverage'] = {
+        'status': 'partial' if incomplete else 'estimated',
+        'blockers': list(dict.fromkeys(blockers)),
+        'weight_payload_gib': p * bits / 8 / GIB,
+        'parameter_source': 'metadata' if observed else 'user_or_nominal',
+        'weight_bits': bits, 'execution_verified': False,
+        'excludes': ['quantization_metadata', 'KV_cache', 'activations', 'optimizer', 'gradients', 'runtime'],
+    }
+    if result['planning_coverage']['status'] == 'partial' and not blockers:
+        result['planning_coverage']['blockers'] = ['完整架构规划尚未就绪；当前仅提供部分容量审计。']
+    return result
+
+
+def _plan_with_architecture(body, model=None):
     """Recommend a stage, rather than requiring users to know ZeRO first.
 
     Objective: smallest feasible allocation, then least state sharding.
     This is a capacity/complexity heuristic, not a throughput prediction.
     A fixed GPU count is evaluated without silently adding more GPUs.
     """
+    if body.get('task','train')!='train' and body.get('deployment_target','gpu')!='gpu':
+        from .edge_planning import plan_edge
+        return plan_edge(body,model)
     if body.get('task','train')!='train':
-        return _plan_resources(body,model)
+        result = _plan_resources(body,model)
+        from .deployment_envelope import deployment_envelope
+        single = _plan_resources(dict(body, batch=1), model)
+        result['deployment_envelope'] = deployment_envelope(body, model, result, single)
+        from .deployment_recipes import assessment
+        support = assessment(model)
+        result['deployment_support'] = support
+        from .deployment_routes import route
+        result['deployment_route']=route(body,model,support)
+        if not support['analytic_supported']:
+            # Retain diagnostic math separately, never present it as an approved layout.
+            result['unverified_capacity_audit'] = {
+                'candidates': result['candidates'], 'selected': result['selected'],
+                'placement': result['placement'], 'detailed_budget': result['detailed_budget']}
+            result['candidates'] = [dict(c, conditional_min_gpus=None,
+                capacity_lower_bound=None, feasible_under_assumptions=False, topology=None,
+                status='adapter_required', reason=support['reason']) for c in result['candidates']]
+            result['selected'] = next(c for c in result['candidates'] if c['gpu']==body.get('gpu','h100'))
+            result['placement'] = None
+            result['warnings'].append(support['reason'])
+        return result
     runs=[_plan_resources(dict(body,zero_stage=stage),model) for stage in range(4)]
     def score(candidate,stage):
         if candidate['feasible_under_assumptions']:
@@ -100,7 +180,7 @@ def _plan_resources(body, model=None):
     bits=number(body,"bits",16,4,16,True)
     if bits not in (4,8,16):
         raise ValueError("精度必须为4/8/16位")
-    seq=number(body,"seq",4096,128,1000000,True)
+    seq=number(body,"seq",4096,128,10000000,True)
     batch=number(body,"batch",1,1,65536,True)
     reserve=number(body,"reserve_percent",20,5,50)/100
     per_node=number(body,"gpus_per_node",8,1,16,True)
@@ -118,6 +198,17 @@ def _plan_resources(body, model=None):
                       ("heads","num_attention_heads"),("kv_heads","num_key_value_heads"),("vocab","vocab_size")):
         dims[key]=number(body,key,cfg.get(field) or 0,0,10000000,True)
     L,d,hq,hkv=dims["layers"],dims["hidden"],dims["heads"],dims["kv_heads"]
+    from .hybrid_cache import hybrid_shape, cache_gib, activation_gib, moe_scratch_bytes
+    from .mla_planning import supported as mla_supported, cache_gib as mla_cache
+    mla=task=='inference' and mla_supported(cfg)
+    from .layered_cache import layers as cache_layers, cache_gib as layered_cache
+    layered=task=='inference' and bool(cache_layers(cfg))
+    hybrid=hybrid_shape(cfg) if task=='inference' else None
+    gdn=bool(hybrid and hybrid.get('kind')=='gdn')
+    moe_extra=batch*seq*moe_scratch_bytes(cfg)/GIB if task=='inference' and not hybrid else 0
+    chunk=number(body,'prefill_chunk_tokens',2048,16,65536,True)
+    cache_block=number(body,'kv_block_tokens',16,1,1024,True)
+    if mla:cache_block=max(64,cache_block)
     notes=["这些是带明确假设的容量方案，不是已实测最低配置；GPU铭牌容量暂以GiB代入，租赁前用实测memory.total复算。",
            "参数规模采用总驻留参数，而非MoE每token激活参数。数据/图像/音频的最终token预算须由processor实测。"]
     if model and observed is None:
@@ -127,20 +218,48 @@ def _plan_resources(body, model=None):
     if L and d:
         # Explicit conservative checkpoint-boundary + transient workload proxy, kept unsharded per rank.
         activation=(2*batch*seq*d*L + 12*batch*seq*max(d,dims['ffn']) + 4*batch*seq*dims['vocab'])/GIB if task=="train" else 12*batch*seq*d/GIB
-        activation=max(activation_budget,activation)
+        activation=max(activation_budget,activation+moe_extra)
         activation_basis="max(手填预算, checkpoint边界2BSdL + 临时张量12BS·max(d,ffn) + 未分块logits4BSV)" if task=="train" else "max(手填预算, prefill临时张量12BSd)"
+        if moe_extra:activation_basis+='；另含路由与top-k专家临时张量代理，非实测峰值'
     else:
         activation=activation_budget
         activation_basis="结构未知，采用手填的每卡激活预算；不是测得值"
     kv=kv_budget
+    if hybrid:
+        activation=max(activation_budget,activation_gib(cfg,batch,seq,chunk))
+        activation_basis=f'分块prefill≤{chunk} tokens；含MoE路由及选中专家临时张量代理'
+        notes.append('混合架构仅TP候选，PP=EP=1；总权重驻留；GDN全注意力KV按KV头分片，Kimi MLA压缩缓存每TP rank复制；循环状态按头切分。关闭MTP和前缀状态快照；仅文本请求，视觉编码峰值另计，执行前核对后端。')
+        notes.append(activation_basis)
     kv_basis="结构未知，采用手填的整实例KV预算"
-    if L and d and hq and hkv and d%hq==0 and not cfg.get("layer_types"):
+    from .deployment_recipes import assessment
+    gemma27=cfg.get('model_type')=='gemma3_text' and assessment(model)['analytic_supported']
+    from .standard_attention import supported as full_history_supported
+    if L and d and hq and hkv and (cfg.get('head_dim') or d%hq==0) and (not cfg.get("layer_types") or gemma27 or full_history_supported(cfg)):
         if cfg.get("kv_lora_rank"):
             kv=2*batch*seq*L*(cfg["kv_lora_rank"]+cfg.get("qk_rope_head_dim",64))/GIB
             kv_basis="MLA压缩缓存假设：2BSL(rank+RoPE维度)；后端若展开缓存须重算"
         else:
-            kv=4*batch*seq*L*hkv*cfg.get("head_dim",d//hq)/GIB
-            kv_basis="BF16 K/V：4BSL·Hkv·dh bytes；批量B表示同时驻留序列数"
+            padded_seq=math.ceil(seq/cache_block)*cache_block
+            kv=4*batch*padded_seq*L*hkv*cfg.get("head_dim",d//hq)/GIB
+            kv_basis="BF16 K/V：4B·ceil(S/page)·page·L·Hkv·dh bytes；B是驻留序列数，每请求独立分页"
+            if gemma27:
+                kv_basis+='；Gemma 3全历史保守上界，不计滑窗回收；仅文本请求'
+                notes.append(kv_basis)
+    if hybrid:
+        kv=cache_gib(cfg,batch,seq,block=cache_block)
+        kv_basis='Kimi：BF16 MLA latent+RoPE按token增长（TP复制）+FP32 KDA矩阵/BF16卷积历史按请求增长（TP分头）；无PP/EP假设'
+        if gdn:kv_basis='Qwen混合：全注意力BF16 KV按token增长/按KV头分片；FP32 GDN矩阵与BF16卷积状态按请求增长/按头TP分片；仅文本，无PP/EP假设'
+    if mla:
+        kv=mla_cache(cfg,batch,seq,block=cache_block)
+        kv_basis='MLA latent+RoPE BF16压缩缓存在TP rank复制，不除以TP；DSA另计索引键/scale，每请求预留尾页；PP按层分片。'
+        activation=max(activation_budget,activation_gib(cfg,batch,seq,chunk))
+        notes.extend([kv_basis,f'必须启用分块prefill≤{chunk} tokens；全部专家权重驻留，禁用MTP/投机与前缀共享；跨节点TP需要RDMA/NCCL实测，非本机原生核。'])
+    if layered:
+        kv=layered_cache(cfg,batch,seq,block=cache_block)
+        kv_basis='逐层BF16 KV：Σ 2×本地KV头×(K维度+V维度)；滑窗按全历史上界，PP取最忙阶段；逐请求分页。'
+        activation=max(activation_budget,activation_gib(cfg,batch,seq,chunk))
+        activation_basis=f'分块prefill≤{chunk} tokens；逐层架构MoE临时张量代理，不是实测峰值'
+        notes.extend([kv_basis,f'分块prefill≤{chunk} tokens；仅文本请求，不含视觉/音频编码峰值；不计MTP、前缀共享或滑窗回收收益。TP/PP为容量候选，外部后端支持另验。'])
     if task=="train":
         if mode=="full":
             ledger={"权重":2*p/GIB,"梯度":2*p/GIB,"FP32主权重":4*p/GIB,"Adam m":4*p/GIB,"Adam v":4*p/GIB}
@@ -169,10 +288,12 @@ def _plan_resources(body, model=None):
             peak=training_resident(n)+activation+workspace+(gather if n>1 and zero==3 else 0)+extra_total
             return {"tp":1,"pp":1,"dp":n,"zero_stage":zero,"peak_gib":peak,"strategy":"单卡" if n==1 else ("DDP / ZeRO-0" if zero==0 else f"ZeRO-{zero}"+(' / FSDP FULL_SHARD' if zero==3 else ''))}
         best=None
-        for tp in range(1,min(n,per_node)+1):
-            if n%tp or (per_node%tp and n>per_node):
+        for tp in (sorted({1,2,4,8,16,32,64,128}&set(range(1,n+1))) if mla else range(1,min(n,per_node)+1)):
+            if n%tp or (per_node%tp and n>per_node and not (mla and tp%per_node==0)):
                 continue
             pp=n//tp
+            if hybrid and (pp!=1 or hybrid['num_heads']%tp or hybrid.get('key_heads',hybrid['num_heads'])%tp or cfg.get('moe_intermediate_size',tp)%tp):
+                continue
             if tp>1 and (not hq or hq%tp or (hkv and hkv%tp and tp%hkv)):
                 continue
             if tp>1 and any(v and v%tp for v in (d,dims['ffn'])):
@@ -181,9 +302,16 @@ def _plan_resources(body, model=None):
                 continue
             # Include GQA KV replication when TP exceeds KV heads.
             kv_local=kv/pp*(max(1,hkv/tp)/hkv if hkv else 1/tp)
+            if hybrid:kv_local=cache_gib(cfg,batch,seq,tp,cache_block)
+            if mla:kv_local=mla_cache(cfg,batch,seq,pp,cache_block)
+            if layered:
+                try:kv_local=layered_cache(cfg,batch,seq,tp,pp,cache_block)
+                except ValueError:continue
             weight=ledger["权重及量化scale估算"]/n
             peak=weight+kv_local+activation+workspace+extra_total
             cand={"tp":tp,"pp":pp,"dp":1,"peak_gib":peak,"strategy":"单卡" if n==1 else "节点内TP + 按层PP"}
+            if hybrid:cand['strategy']='混合注意力 节点内TP；PP=EP=1'
+            if mla:cand['strategy']='MLA TP（可跨节点）+等层PP容量候选；EP未启用'
             if peak<=gpu["gib"]*(1-reserve) and (best is None or pp<best["pp"]):
                 best=cand
         return best
@@ -235,10 +363,17 @@ def _plan_resources(body, model=None):
         row('weights',total,total/divisor if divisor else None,'P × weight bits / 8; packed format and retained layers can differ')
         row('quant_meta',over,over/divisor if divisor else None,'INT4 scale/zero proxy 0.0625 byte per weight; inspect actual format')
         local=kv/topo['pp']*(max(1,hkv/topo['tp'])/hkv if hkv else 1/topo['tp']) if topo else None
+        if hybrid and topo:local=cache_gib(cfg,batch,seq,topo['tp'],cache_block)
+        if mla and topo:local=mla_cache(cfg,batch,seq,topo['pp'],cache_block)
+        if layered and topo:local=layered_cache(cfg,batch,seq,topo['tp'],topo['pp'],cache_block)
         row('kv',kv,local,kv_basis)
         for key in ('gradients','master','adam_m','adam_v'):row(key,0,0,'Inference: no backward pass or optimizer')
     boundary=2*batch*seq*d*L/GIB if L and d and task=='train' else 0
     transient=(12*batch*seq*max(d,dims['ffn'])/GIB if task=='train' else 12*batch*seq*d/GIB) if L and d else 0
+    transient+=moe_extra
+    if hybrid:transient=activation_gib(cfg,batch,seq,chunk)
+    if mla:transient=activation_gib(cfg,batch,seq,chunk)
+    if layered:transient=activation_gib(cfg,batch,seq,chunk)
     logits=4*batch*seq*dims['vocab']/GIB if L and d and task=='train' else 0
     for key,value,basis in [('saved_activations',boundary,'2BSdL: BF16 checkpoint boundaries; assumes activation checkpointing'),('transient',transient,'Temporary tensor proxy; not a layer-by-layer measured liveness trace'),('logits',logits,'4BSV: materialized FP32 training logits; chunked/fused loss can reduce this'),('activation_extra',max(0,activation-boundary-transient-logits),'Remaining per-GPU user activation budget above the structural proxy')]:
         row(key,None,value,basis)
@@ -272,21 +407,31 @@ def _plan_resources(body, model=None):
         elif key=='kv':
             if task=='train':formula='0 (teacher-forced training; K/V activations counted separately)'
             else:
-                precision='BF16 · 2 bytes';source='shape_proxy' if L and d and hq and hkv and d%hq==0 and not cfg.get('layer_types') else 'manual_budget'
+                precision='BF16 · 2 bytes';source='shape_proxy' if L and d and hq and hkv and d%hq==0 and (not cfg.get('layer_types') or gemma27) else 'manual_budget'
                 total_formula=f'{kv:.6f} GiB (input budget)'
                 if source=='shape_proxy':
                     total_formula=(f'2 × {batch} × {seq} × {L} × ({cfg["kv_lora_rank"]} + {cfg.get("qk_rope_head_dim",64)}) ÷ 2^30' if cfg.get('kv_lora_rank') else f'2(K,V) × 2 bytes × {batch} × {seq} × {L} × {hkv} × {cfg.get("head_dim",d//hq)} ÷ 2^30')
+                if source=='shape_proxy' and not cfg.get('kv_lora_rank'):
+                    total_formula=f'2(K,V) × 2 bytes × {batch} × ceil({seq}/{cache_block}) × {cache_block} × {L} × {hkv} × {cfg.get("head_dim",d//hq)} ÷ 2^30'
                 factor=max(1,hkv/topo['tp'])/hkv if topo and hkv else 1/topo['tp'] if topo else None
                 formula=f'({total_formula}) ÷ PP {topo["pp"] if topo else "?"} × head fraction {factor if factor is not None else "?"}'
         elif key in ('saved_activations','transient','logits'):
             source='shape_proxy';precision={'saved_activations':'BF16 · 2 bytes','transient':'mixed · proxy coefficient 12','logits':'FP32 · 4 bytes'}[key]
             formula={'saved_activations':f'2 × {batch} × {seq} × {d} × {L} ÷ 2^30',
-                     'transient':f'12 × {batch} × {seq} × {max(d,dims["ffn"]) if task=="train" else d} ÷ 2^30',
+                     'transient':f'12 × {batch} × {seq} × {max(d,dims["ffn"]) if task=="train" else d} ÷ 2^30 + MoE路由/专家临时量 {moe_extra:.6f} GiB',
                      'logits':f'4 × {batch} × {seq} × {dims["vocab"]} ÷ 2^30'}[key]
             if not (L and d) or (task=='inference' and key!='transient'):
                 formula='0 (not modeled / not applicable; see activation budget)';precision='N/A'
         elif key=='activation_extra':
             formula=f'max(0, {activation_budget:.6f} − {boundary+transient+logits:.6f}) GiB'
+        if task=='inference' and key=='kv' and not hybrid and not mla and not layered and full_history_supported(cfg):
+            source='shape_proxy';formula=kv_basis
+        if layered and key in ('kv','transient'):
+            source='layered_architecture_proxy';precision='BF16 KV' if key=='kv' else 'mixed · proxy'
+            formula=kv_basis if key=='kv' else activation_basis
+        if hybrid and key in ('kv','transient'):
+            source='hybrid_architecture_proxy';precision='BF16 attention/conv + FP32 recurrent' if key=='kv' else 'mixed · proxy'
+            formula=kv_basis if key=='kv' else activation_basis
         elif key=='gather':
             source='manual_budget' if 'gather_gib' in body or not L else 'shape_proxy'
             precision='BF16 proxy' if source=='shape_proxy' else 'N/A'
@@ -310,6 +455,9 @@ def _plan_resources(body, model=None):
         {'step':'分片规则','calculation':f'TP={topo["tp"]}, PP={topo["pp"]}, DP={topo["dp"]}; '+(f'ZeRO-{zero}：按阶段决定状态分片，具体除数见逐项账本；激活/工作区不随DP均分' if task=='train' else '权重除以TP×PP；KV按PP和KV头分片，TP超过KV头时计入复制') if topo else '没有满足预算和整除约束的候选'},
         {'step':'逐卡验证','calculation':f'账本逐行求和={total_rows:.3f} GiB；可用{budget["usable_gib"]:.3f} GiB；余量={budget["headroom_gib"]:.3f} GiB' if total_rows is not None else '不可行或结构不足，无法证明装得下'},
     ]
+    if hybrid:
+        derivation[-2]['calculation']='总MoE权重按TP分片；压缩MLA不除以TP；KDA按头分片；PP=EP=1，临时张量不假定分片收益。'
+        if gdn:derivation[-2]['calculation']='总权重按TP分片；仅全注意力层计KV并按KV头分片；GDN矩阵/卷积状态按头分片；PP=EP=1，仅文本请求。'
     return {"derivation":derivation,"parameters":p,"parameter_basis":("远端报告存储元素（未下载验证）" if (model or {}).get('kind')=='remote' else "扫描存储元素") if observed is not None else "用户手填总参数",
             "task":task,"mode":mode,"zero_stage":zero if task=='train' else None,"ledger_gib":ledger,"static_total_gib":static,
             "per_rank_activation_gib":activation,"activation_basis":activation_basis,"workspace_gib":workspace,

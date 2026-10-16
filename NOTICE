@@ -5,3 +5,7 @@ Bundled marked.js retains its upstream license in docs/marked-LICENSE.txt.
 Bundled DOMPurify retains its upstream license in docs/dompurify-LICENSE.txt.
 Redistributed reference documents have separate terms; see knowledge/THIRD_PARTY_NOTICES.md.
 Third-party model weights, datasets and runtime engines are not relicensed by this project.
+The bundled Engine deployment-reference catalog retains its MIT license in
+docs/engine-catalog-LICENSE.txt; see docs/ENGINE_CATALOG_PROVENANCE.md.
+Public model configuration snapshots retain their upstream terms and provenance URLs.
+They contain no model weights and do not grant permission to use gated models or runtimes.

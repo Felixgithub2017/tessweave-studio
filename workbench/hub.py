@@ -137,7 +137,7 @@ def catalog(source_key, author="Qwen", search="", sort="downloads", filters=None
     if sort not in ("downloads", "lastModified"):
         raise ValueError("不支持的排序")
     authors = AUTHORS if author == "all" else [author]
-    if any(not re.fullmatch(r"[\w.-]{1,80}", a, re.ASCII) for a in authors) or len(search) > 120:
+    if any(not re.fullmatch(r"[\w.-]{1,80}", a, re.ASCII) and not (a=='' and source_key in ('huggingface','hf-mirror') and search.strip()) for a in authors) or len(search) > 120:
         raise ValueError("组织或检索词非法")
     base = source(source_key)
 
@@ -162,6 +162,7 @@ def catalog(source_key, author="Qwen", search="", sort="downloads", filters=None
                 return [], {"author":a,"error":public_error(exc)}
         query = {"author": a, "sort": sort, "direction": -1, "limit": limit,
                  "expand": ["safetensors", "createdAt", "lastModified", "pipeline_tag", "cardData", "downloads", "likes"]}
+        if not a:query.pop('author')  # Explicit text search may span all publishers.
         if (filters or {}).get('modality'):query['pipeline_tag']=filters['modality']
         if search.strip():
             query["search"] = search.strip()

@@ -34,13 +34,15 @@ if record.exists():
     try:
         req=urllib.request.Request('http://127.0.0.1:%d/api/info'%PORT,headers={'X-Workbench-Token':old['token']})
         with urllib.request.build_opener(urllib.request.ProxyHandler({})).open(req,timeout=2) as response:response.read(1048576)
+        if old.get('app')!=str(appdir):raise RuntimeError('Existing cloud workspace runs older code; stop its server explicitly or choose a new workspace root AND unused remote/local ports. No automatic restart of running jobs.')
         info=old
+    except RuntimeError:raise
     except Exception:pass
 if info is None:
     state=root/'state';log=root/'server.log'
     argv=[sys.executable,'-m','workbench','serve','--port',str(PORT),'--state',str(state),'--allow-root',str(root)]
     with (root/'bootstrap-commands.jsonl').open('a') as f:f.write(json.dumps({'argv':argv,'cwd':str(appdir),'time':time.time()})+'\n')
-    env=dict(os.environ,PYTHONPATH=str(appdir),PYTHONUNBUFFERED='1')
+    env=dict(os.environ,PYTHONPATH=str(appdir),PYTHONUNBUFFERED='1',TESSWEAVE_REMOTE_WORKSPACE='1')
     with log.open('w') as out:
         proc=subprocess.Popen(argv,cwd=appdir,env=env,stdin=subprocess.DEVNULL,stdout=out,stderr=subprocess.STDOUT,start_new_session=True)
     for _ in range(60):
@@ -56,14 +58,21 @@ print(json.dumps(info))
 '''
 
 
-def run(manifest):
-    plan=json.loads(Path(manifest).read_text());r=plan['request'];cwd=Path(manifest).parent
+def build_bundle():
+    """Package code, offline catalogs and UI assets together for portable startup."""
     package=Path(__file__).parent;buffer=io.BytesIO()
     with zipfile.ZipFile(buffer,'w',zipfile.ZIP_DEFLATED) as archive:
         for p in sorted(package.rglob('*')):
-            if p.is_file() and '__pycache__' not in p.parts and p.suffix in ('.py','.js','.css','.html','.txt'):
+            if p.is_file() and '__pycache__' not in p.parts and p.suffix in ('.py','.js','.css','.html','.txt','.json','.svg','.jpg','.png'):
                 archive.write(p,'workbench/'+str(p.relative_to(package)))
-    data=buffer.getvalue();digest=hashlib.sha256(data).hexdigest()[:16]
+    data=buffer.getvalue()
+    if len(data)>8*1024*1024:raise ValueError('Bundle too large')
+    return data
+
+
+def run(manifest):
+    plan=json.loads(Path(manifest).read_text());r=plan['request'];cwd=Path(manifest).parent
+    data=build_bundle();digest=hashlib.sha256(data).hexdigest()[:16]
     source='ROOT='+repr(r['root'])+'\nPORT='+str(r['remote_port'])+'\nDIGEST='+repr(digest)+'\n'+BOOTSTRAP
     sourcefile=cwd/'bootstrap.py';sourcefile.write_text(source)
     ssh=['ssh','-o','BatchMode=yes','-o','StrictHostKeyChecking=yes','-o','ConnectTimeout=8','-o','ServerAliveInterval=15','-o','ServerAliveCountMax=3']

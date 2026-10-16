@@ -1,6 +1,9 @@
 'use strict';
 // Stable message IDs. Backend traces remain verbatim and are explicitly labelled.
 const M={
+workflowPlanning:['Plan first','方案规划'],
+trainFlow:['Train a model','训练模型'],deployFlow:['Deploy a model','部署模型'],trainingPlan:['Training plan','制定训练方案'],deploymentPlan:['Deployment plan','制定部署方案'],
+academy:['Hardware & training guide','硬件地图与训练向导'],
 zeroAutomatic:['ZeRO strategy is selected automatically: compare stages 0–3, keep the requested task and precision, fit the memory budget, prefer fewer cards, then less state sharding. No measured speed ranking is implied.','ZeRO 策略由系统自动评估：比较 0–3 阶段，保持任务与精度不变，先满足显存预算，再优先更少卡数、较少状态分片；不代表已实测速度排序。'],
 zeroStage:['Training state sharding · ZeRO stage (not used for inference)','训练状态分片 · ZeRO阶段（推理不使用）'],
 serviceCapabilities:['Service input capability','服务输入能力'],capText:['Text only','仅文本'],capImage:['Text + images (already supported by engine)','文本＋图片（引擎已支持）'],capabilityWarning:['Declaring image support does not add a vision model. Confirm the running engine accepts image_url content. Readiness checks test text only.','声明图片能力不会给模型增加视觉功能。请确认运行中的引擎支持 image_url 消息；就绪检测仅验证文字生成。'],

@@ -12,7 +12,42 @@ Model Workbench is a local-first graphical control plane for model discovery, do
 
 [中文使用手册](docs/USER_GUIDE.zh-CN.md) · [Cloud & environments](docs/cloud-and-environments.md) · [Observability](docs/observability.md) · [Paper source](paper/model-workbench.tex) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md)
 
-## Studio and Engine
+## Interface walkthrough
+
+The screenshots below come from an isolated local demo workspace. They show UI and
+conditional planning estimates, not a running GPU deployment or measured performance.
+
+| Start with a goal | Search the model catalog |
+| --- | --- |
+| ![Four independent workflow entry points](docs/screenshots/home.png) | ![Searchable model chooser with modality filters](docs/screenshots/model-picker.png) |
+
+![Deployment planner: inputs, per-GPU memory chart and capacity estimates](docs/screenshots/planner.png)
+
+Choose **Train a model**, **Deploy a model**, **Plan training**, or **Plan deployment**.
+Each stage works independently; importing another stage's configuration does not navigate
+away or launch a job. Edit context, resident concurrency, precision and hardware to update
+the estimate. Review the colored memory ledger and assumptions before using a candidate.
+See the [step-by-step Chinese guide](docs/USER_GUIDE.zh-CN.md#studio-规划器快速上手).
+
+### Coverage, not certification
+
+The 2026-10-16 offline audit contains **413 catalog entries**: 163 have an analytic
+planning path, 196 require metadata, 50 require an architecture adapter, and 4 use
+upstream recipe references. These are different evidence levels—not 413 tested deployments.
+Text-decoder estimates do not cover the full multimodal pipeline. The
+[per-model index](docs/MODEL_PLANNING_INDEX.zh-CN.md) lists each entry's formula and gaps.
+
+## Studio and Engine responsibilities
+
+**部署计算原理：** [模型部署规划计算手册](docs/DEPLOYMENT_PLANNING_MATH.zh-CN.md) 解释各架构缓存、多卡搜索、长上下文增量、混合长度并发及端侧预算的公式与验证边界。
+
+**逐模型查算：** [413 条目录模型与公式对照](docs/MODEL_PLANNING_INDEX.zh-CN.md) 按计算路径列出结构字段、单请求 4K 缓存算例与待补项；缓存算例不是部署总显存。
+
+**2026 MoE deployment reference:** [大型 MoE 部署资料与规划依据](docs/MOE_DEPLOYMENT_REFERENCE_2026.md) distinguishes upstream workload validation, launch recipes and unresolved evidence. The planner now blocks generic TP/PP approval for unknown/special architectures and displays exact-repository recipe references; these are not locally validated or executable presets.
+
+**Hardware atlas & post-training coach:** open the new sidebar guide for searchable device-family references and step-by-step SFT, DPO, GRPO, PPO and RLHF lessons. Objectives and Full/LoRA/QLoRA update strategies are separate. Supported selections transfer to the existing training form without execution; QLoRA execution and PPO role orchestration remain blocked. The initial 12-entry catalogue is not exhaustive hardware certification. See [scope and implementation roadmap](docs/STUDIO_GUIDED_WORKFLOWS.md).
+
+**Execution target:** use the global Local / Remote GPU selector after establishing an SSH workspace in **Hosts & environments**. Switching replaces the whole workspace (models, downloads, environments, training, deployment and logs), not just its hardware card. Jobs remain on their original host; a disconnected remote never falls back to local execution. See [host switching guide](docs/EXECUTION_HOSTS.md).
 
 | Project | What it owns | What it does not imply |
 | --- | --- | --- |
@@ -28,6 +63,10 @@ The current connection is an explicitly registered loopback HTTP service. One-cl
 Public repositories: [Studio](https://github.com/Felixgithub2017/tessweave-studio) · [Engine](https://github.com/Felixgithub2017/tessweave-engine) · [Train](https://github.com/Felixgithub2017/tessweave-train). Branding changes do not broaden the support matrix. [Brand assets and compatibility policy](docs/BRAND.md).
 
 ## Why this project
+
+### Workload driven serving scenarios
+
+In **Compute resources**, select **Deploy** as the task and calculate a single-replica capacity plan. The new **Traffic → replicas → failure reserve** panel then calculates peak model-call demand, normal replicas, failure-domain reserves and GPU cost from explicit traffic and reviewed open-loop measurements. Unknown or SLO-failing calibration does not produce a replica recommendation. Formulas and assumptions are visible; a model/topology/context change clears calibration. See [serving planner walkthrough](docs/SERVING_PLANNER.md). This is not an implemented HA controller or an automatic performance guarantee.
 
 ### Offline research evidence
 
@@ -51,12 +90,18 @@ Modules are independent: connect an existing service directly, inspect an offlin
 
 ## Quick start
 
-Model selection uses persistent metadata caches. The MiMo-V2.6-Pro-RL entry includes a dated
-ModelScope config snapshot for first-launch offline use. Other uncached entries try HF and
-its mirror without proxies; failures appear beside the picker with a source-refresh action.
+Model selection uses persistent metadata caches and bundled, dated public configuration
+snapshots. The offline pack prioritizes verified ModelScope repository identities;
+missing configurations are not invented. Use the selected provider's refresh action when
+needed. These files contain metadata, not model weights, and do not execute repository code.
 Resource calculation never refetches cloud metadata. Publisher nominal counts are explicitly
 labelled estimates, not scanned logical counts. A readable config does not establish training
 support: hybrid/multimodal and quantized checkpoints still require architecture/backend validation.
+
+Standalone Studio includes a snapshot of the Engine deployment-reference catalog;
+installing Engine is not required to browse these reference tutorials. An available Engine
+catalog takes precedence. Snapshot provenance and licensing are recorded in
+[the catalog notice](docs/ENGINE_CATALOG_PROVENANCE.md).
 
 Requirements: Python 3.9+, macOS or Linux (Windows through WSL). The control plane uses Python's standard library; training and inference dependencies belong in separate environments.
 

@@ -61,10 +61,11 @@ class InfrastructureTests(unittest.TestCase):
         """Exercise real bootstrap on an isolated loopback host, not an SSH claim."""
         import io,zipfile,hashlib,socket,subprocess,os,signal
         import workbench
-        buffer=io.BytesIO();package=Path(workbench.__file__).parent
-        with zipfile.ZipFile(buffer,'w',zipfile.ZIP_DEFLATED) as z:
-            for p in package.glob('*.py'):z.write(p,'workbench/'+p.name)
-        data=buffer.getvalue();digest=hashlib.sha256(data).hexdigest()[:16]
+        from workbench.cloud_runner import build_bundle
+        data=build_bundle();digest=hashlib.sha256(data).hexdigest()[:16]
+        with zipfile.ZipFile(io.BytesIO(data)) as z:
+            self.assertIn('workbench/static/tessweave-brand.jpg',z.namelist())
+            self.assertIn('workbench/knowledge/deployment-models-20261015.json',z.namelist())
         with socket.socket() as sock:
             sock.bind(('127.0.0.1',0));port=sock.getsockname()[1]
         with tempfile.TemporaryDirectory() as root:

@@ -15,6 +15,13 @@ MODELS=[
 
 
 def featured_models():
-    return [dict(key='huggingface:'+repo,repo=repo,name=repo,kind='remote',source='huggingface',
+    import json
+    from pathlib import Path
+    path=Path(__file__).parent/'knowledge'/'model-browser.json'
+    snapshot=json.loads(path.read_text()) if path.exists() else {'models':[]}
+    rows={ 'huggingface:'+m['id']:dict(key='huggingface:'+m['id'],repo=m['id'],name=m['id'],kind='remote',source='huggingface',featured=True,parameter_estimate=None,config={},pipeline_tag=m.get('pipeline_tag'),license=m.get('license'),gated=m.get('gated'),reported_parameters=m.get('parameters'),metadata_status='catalog_only') for m in snapshot['models']}
+    for row in [dict(key='huggingface:'+repo,repo=repo,name=repo,kind='remote',source='huggingface',
                  featured=True,nominal_parameters_b=b,parameter_estimate=None,config={},
-                 parameter_source=url,reviewed='2026-10-07') for repo,b,url in MODELS]
+                 parameter_source=url,reviewed='2026-10-07') for repo,b,url in MODELS]:
+        rows[row['key']]={**rows.get(row['key'],{}),**row}
+    return list(rows.values())

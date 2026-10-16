@@ -1,0 +1,5894 @@
+[
+  {
+    "repo": "01-ai/Yi-1.5-34B",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 245760,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.9375
+    },
+    "parameters": 34388917248,
+    "inputs": "L=60; Hkv=8; dh=128"
+  },
+  {
+    "repo": "01-ai/Yi-1.5-34B-Chat",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 245760,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.9375
+    },
+    "parameters": 34388917248,
+    "inputs": "L=60; Hkv=8; dh=128"
+  },
+  {
+    "repo": "01-ai/Yi-1.5-6B",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 65536,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.25
+    },
+    "parameters": 6061035520,
+    "inputs": "L=32; Hkv=4; dh=128"
+  },
+  {
+    "repo": "01-ai/Yi-1.5-9B",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 98304,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.375
+    },
+    "parameters": 8829407232,
+    "inputs": "L=48; Hkv=4; dh=128"
+  },
+  {
+    "repo": "01-ai/Yi-1.5-9B-Chat",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 98304,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.375
+    },
+    "parameters": 8829407232,
+    "inputs": "L=48; Hkv=4; dh=128"
+  },
+  {
+    "repo": "01-ai/Yi-34B",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 245760,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.9375
+    },
+    "parameters": 34388917248,
+    "inputs": "L=60; Hkv=8; dh=128"
+  },
+  {
+    "repo": "01-ai/Yi-34B-200K",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 245760,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.9375
+    },
+    "parameters": 34388921088,
+    "inputs": "L=60; Hkv=8; dh=128"
+  },
+  {
+    "repo": "01-ai/Yi-34B-Chat",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 245760,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.9375
+    },
+    "parameters": 34388917248,
+    "inputs": "L=60; Hkv=8; dh=128"
+  },
+  {
+    "repo": "01-ai/Yi-6B",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 65536,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.25
+    },
+    "parameters": 6061035520,
+    "inputs": "L=32; Hkv=4; dh=128"
+  },
+  {
+    "repo": "01-ai/Yi-6B-200K",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 65536,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.25
+    },
+    "parameters": 6061037568,
+    "inputs": "L=32; Hkv=4; dh=128"
+  },
+  {
+    "repo": "01-ai/Yi-6B-Chat",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 65536,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.25
+    },
+    "parameters": 6061035520,
+    "inputs": "L=32; Hkv=4; dh=128"
+  },
+  {
+    "repo": "01-ai/Yi-Coder-9B-Chat",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 98304,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.375
+    },
+    "parameters": 8829407232,
+    "inputs": "L=48; Hkv=4; dh=128"
+  },
+  {
+    "repo": "ByteDance-Seed/BAGEL-7B-MoT",
+    "model_type": "bagel",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 14691079811,
+    "required_calculation": "生成管线：按分辨率/帧数/步数计算编码器、去噪器及激活峰值"
+  },
+  {
+    "repo": "ByteDance-Seed/Seed-Coder-8B-Instruct",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 8250462208,
+    "inputs": "L=32; Hkv=8; dh=128"
+  },
+  {
+    "repo": "ByteDance-Seed/Seed-OSS-36B-Base",
+    "model_type": "seed_oss",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 262144,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.0
+    },
+    "parameters": 36151104512,
+    "inputs": "L=64; Hkv=8; dh=128"
+  },
+  {
+    "repo": "ByteDance-Seed/Seed-OSS-36B-Instruct",
+    "model_type": "seed_oss",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 262144,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.0
+    },
+    "parameters": 36151104512,
+    "inputs": "L=64; Hkv=8; dh=128"
+  },
+  {
+    "repo": "ByteDance-Seed/Seed-X-Instruct-7B",
+    "model_type": "mistral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 7514271744,
+    "inputs": "L=32; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "ByteDance-Seed/Seed-X-PPO-7B",
+    "model_type": "mistral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 7514271744,
+    "inputs": "L=32; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "ByteDance-Seed/SeedVR-3B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "ByteDance-Seed/SeedVR2-3B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "ByteDance-Seed/SeedVR2-7B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "ByteDance-Seed/UI-TARS-1.5-7B",
+    "model_type": "qwen2_5_vl",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 57344,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.21875
+    },
+    "parameters": 8292166656,
+    "inputs": "L=28; Hkv=4; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "ByteDance-Seed/UI-TARS-2B-SFT",
+    "model_type": "qwen2_vl",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 28672,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.109375
+    },
+    "parameters": 2442359296,
+    "inputs": "L=28; Hkv=2; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "ByteDance-Seed/academic-ds-9B",
+    "model_type": "deepseek_v3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 18432,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.0714111328125
+    },
+    "parameters": 9366498240,
+    "inputs": "L=16; latent=512; RoPE=64"
+  },
+  {
+    "repo": "ByteDance/AnimateDiff-Lightning",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "ByteDance/Hyper-SD",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "ByteDance/LatentSync-1.5",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "ByteDance/LatentSync-1.6",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "ByteDance/Ouro-1.4B",
+    "model_type": "ouro",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 1434652673,
+    "required_calculation": "特殊逐层/复用路径：核对层表、状态复用及缓存寿命"
+  },
+  {
+    "repo": "ByteDance/Ouro-1.4B-Thinking",
+    "model_type": "ouro",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 1434652673,
+    "required_calculation": "特殊逐层/复用路径：核对层表、状态复用及缓存寿命"
+  },
+  {
+    "repo": "ByteDance/Ouro-2.6B",
+    "model_type": "ouro",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 2667974657,
+    "required_calculation": "特殊逐层/复用路径：核对层表、状态复用及缓存寿命"
+  },
+  {
+    "repo": "ByteDance/Ouro-2.6B-Thinking",
+    "model_type": "ouro",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 2667974657,
+    "required_calculation": "特殊逐层/复用路径：核对层表、状态复用及缓存寿命"
+  },
+  {
+    "repo": "ByteDance/SDXL-Lightning",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "ByteDance/Sa2VA-4B",
+    "model_type": "sa2va_chat",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 3941809714,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "ByteDance/Sa2VA-8B",
+    "model_type": "sa2va_chat",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 8317666866,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "ByteDance/Sa2VA-Qwen2_5-VL-3B",
+    "model_type": "qwen2_5_vl_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 36864,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.140625
+    },
+    "parameters": 4293849394,
+    "inputs": "L=36; Hkv=2; dh=128"
+  },
+  {
+    "repo": "FunAudioLLM/CosyVoice2-0.5B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "FunAudioLLM/Fun-ASR-MLT-Nano-2512",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "FunAudioLLM/Fun-ASR-Nano-2512",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "FunAudioLLM/Fun-ASR-Nano-2512-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "FunAudioLLM/Fun-ASR-Nano-2512-hf",
+    "model_type": "qwen3",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 829791840,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "FunAudioLLM/Fun-ASR-Nano-2512-vllm",
+    "model_type": "qwen3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 114688,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.4375
+    },
+    "parameters": 985374304,
+    "inputs": "L=28; Hkv=8; dh=128"
+  },
+  {
+    "repo": "FunAudioLLM/Fun-ASR-Nano-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "FunAudioLLM/Fun-CosyVoice3-0.5B-2512",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "FunAudioLLM/SenseVoiceSmall",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "FunAudioLLM/SenseVoiceSmall-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "FunAudioLLM/SenseVoiceSmall-GGUF-audiocpp",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "FunAudioLLM/fsmn-vad-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolLM-135M",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 23040,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.087890625
+    },
+    "parameters": 134515008,
+    "inputs": "L=30; Hkv=3; dh=64"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 196608,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.75
+    },
+    "parameters": 1711376384,
+    "inputs": "L=24; Hkv=32; dh=64"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolLM2-135M",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 23040,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.087890625
+    },
+    "parameters": 134515008,
+    "inputs": "L=30; Hkv=3; dh=64"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 23040,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.087890625
+    },
+    "parameters": 134515008,
+    "inputs": "L=30; Hkv=3; dh=64"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolLM2-360M",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 40960,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.15625
+    },
+    "parameters": 361821120,
+    "inputs": "L=32; Hkv=5; dh=64"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolLM2-360M-Instruct",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 40960,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.15625
+    },
+    "parameters": 361821120,
+    "inputs": "L=32; Hkv=5; dh=64"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolLM3-3B",
+    "model_type": "smollm3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 73728,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.28125
+    },
+    "parameters": 3075098624,
+    "inputs": "L=36; Hkv=4; dh=128"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolLM3-3B-Base",
+    "model_type": "smollm3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 73728,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.28125
+    },
+    "parameters": 3075098624,
+    "inputs": "L=36; Hkv=4; dh=128"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolVLM-256M-Instruct",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 23040,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.087890625
+    },
+    "parameters": 256484928,
+    "inputs": "L=30; Hkv=3; dh=64"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolVLM-500M-Instruct",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 40960,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.15625
+    },
+    "parameters": 507482304,
+    "inputs": "L=32; Hkv=5; dh=64"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolVLM2-2.2B-Instruct",
+    "model_type": "llama",
+    "status": "metadata_required",
+    "missing": [
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 2246784880,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 40960,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.15625
+    },
+    "parameters": 507482304,
+    "inputs": "L=32; Hkv=5; dh=64"
+  },
+  {
+    "repo": "Lightricks/LTX-2",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Lightricks/LTX-2.3",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Lightricks/LTX-2.3-fp8",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Lightricks/LTX-2.3-nvfp4",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Lightricks/LTX-2.5",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Lightricks/LTX-2.5-22b-IC-LoRA-Alpha-Gen",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Lightricks/LTX-2.5-22b-IC-LoRA-Pixel-Spatial-Upscaler",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Lightricks/LTX-2.5-22b-IC-LoRA-Refine-Details",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Lightricks/LTX-2.5-Diffusers",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Lightricks/LTX-Video",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Lightricks/LTX-Video-ICLoRA-detailer-13b-0.9.8",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Lightricks/gemma-3-12b-it-qat-q4_0-unquantized",
+    "model_type": "gemma3_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 393216,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.5
+    },
+    "parameters": 12187325040,
+    "inputs": "L=48; Hkv=8; dh=256; SW全历史上界"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-H3",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-M1-40k",
+    "model_type": "minimax_m1",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 456089655296,
+    "required_calculation": "专用压缩/混合路径：核对压缩、索引或状态布局及附加模块，不能沿用普通KV"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-M2",
+    "model_type": "minimax_m2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 253952,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.96875
+    },
+    "parameters": 230000000000.0,
+    "inputs": "L=62; Hkv=8; dh=128"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-M2.1",
+    "model_type": "minimax_m2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 253952,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.96875
+    },
+    "parameters": null,
+    "inputs": "L=62; Hkv=8; dh=128"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-M2.5",
+    "model_type": "minimax_m2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 253952,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.96875
+    },
+    "parameters": null,
+    "inputs": "L=62; Hkv=8; dh=128"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-M2.7",
+    "model_type": "minimax_m2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 253952,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.96875
+    },
+    "parameters": null,
+    "inputs": "L=62; Hkv=8; dh=128"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-M3",
+    "model_type": "未知",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 427040140160,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-M3-MXFP8",
+    "model_type": "未知",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-Music3",
+    "model_type": "minimax_music3",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 2431905920,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-Text-01",
+    "model_type": "minimax_text_01",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 456089655296,
+    "required_calculation": "专用压缩/混合路径：核对压缩、索引或状态布局及附加模块，不能沿用普通KV"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-Text-01-hf",
+    "model_type": "minimax",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 456089655296,
+    "required_calculation": "专用压缩/混合路径：核对压缩、索引或状态布局及附加模块，不能沿用普通KV"
+  },
+  {
+    "repo": "MiniMaxAI/MiniMax-VL-01",
+    "model_type": "minimax_text_01",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 456437219328,
+    "required_calculation": "专用压缩/混合路径：核对压缩、索引或状态布局及附加模块，不能沿用普通KV"
+  },
+  {
+    "repo": "OpenGVLab/InternVL2-1B",
+    "model_type": "internvl_chat",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 938158976,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "OpenGVLab/InternVL2-2B",
+    "model_type": "internvl_chat",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 2205754368,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "OpenGVLab/InternVL2_5-2B",
+    "model_type": "internvl_chat",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 2205754368,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "OpenGVLab/InternVL2_5-4B-MPO",
+    "model_type": "internvl_chat",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 3712637952,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "OpenGVLab/InternVL3-1B",
+    "model_type": "internvl_chat",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 938193024,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "OpenGVLab/InternVL3-1B-hf",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 12288,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.046875
+    },
+    "parameters": 938193024,
+    "inputs": "L=24; Hkv=2; dh=64"
+  },
+  {
+    "repo": "OpenGVLab/InternVL3-8B",
+    "model_type": "internvl_chat",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 7944373760,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "OpenGVLab/InternVL3-8B-hf",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 57344,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.21875
+    },
+    "parameters": 7944373760,
+    "inputs": "L=28; Hkv=4; dh=128"
+  },
+  {
+    "repo": "OpenGVLab/InternVL3_5-1B",
+    "model_type": "internvl_chat",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 1060897792,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "OpenGVLab/InternVL3_5-8B",
+    "model_type": "internvl_chat",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 8528318464,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "OpenGVLab/InternVL3_5-GPT-OSS-20B-A4B-Preview-HF",
+    "model_type": "gpt_oss",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 49152,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.1875
+    },
+    "parameters": 21232768704,
+    "inputs": "L=24; Hkv=8; dh=64; SW全历史上界"
+  },
+  {
+    "repo": "OpenGVLab/Mini-InternVL-Chat-2B-V1-5",
+    "model_type": "internvl_chat",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 2205754368,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "PaddlePaddle/PP-DocLayoutV3_safetensors",
+    "model_type": "pp_doclayout_v3",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 33288957,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "PaddlePaddle/PP-LCNet_x1_0_doc_ori",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "PaddlePaddle/PP-LCNet_x1_0_textline_ori",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "PaddlePaddle/PP-OCRv5_mobile_det",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "PaddlePaddle/PP-OCRv5_mobile_det_onnx",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "PaddlePaddle/PP-OCRv5_server_det",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "PaddlePaddle/PP-OCRv5_server_rec",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "PaddlePaddle/PP-OCRv6_medium_det",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "PaddlePaddle/PP-OCRv6_medium_rec_onnx",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "PaddlePaddle/PaddleOCR-VL-1.6-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "PaddlePaddle/UVDoc",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "PaddlePaddle/en_PP-OCRv5_mobile_rec",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-0.5B-Instruct",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 12288,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.046875
+    },
+    "parameters": 494032768,
+    "inputs": "L=24; Hkv=2; dh=64; SW全历史上界"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-1.5B-Instruct",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 28672,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.109375
+    },
+    "parameters": 1500000000.0,
+    "inputs": "L=28; Hkv=2; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-14B-Instruct",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 196608,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.75
+    },
+    "parameters": 14000000000.0,
+    "inputs": "L=48; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-32B-Instruct",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 262144,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.0
+    },
+    "parameters": 32000000000.0,
+    "inputs": "L=64; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-3B-Instruct",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 36864,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.140625
+    },
+    "parameters": 3000000000.0,
+    "inputs": "L=36; Hkv=2; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "Qwen/Qwen2.5-7B-Instruct",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 57344,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.21875
+    },
+    "parameters": 7000000000.0,
+    "inputs": "L=28; Hkv=4; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "Qwen/Qwen3-0.6B",
+    "model_type": "qwen3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 114688,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.4375
+    },
+    "parameters": 600000000.0,
+    "inputs": "L=28; Hkv=8; dh=128"
+  },
+  {
+    "repo": "Qwen/Qwen3-1.7B",
+    "model_type": "qwen3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 114688,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.4375
+    },
+    "parameters": 1700000000.0,
+    "inputs": "L=28; Hkv=8; dh=128"
+  },
+  {
+    "repo": "Qwen/Qwen3-14B",
+    "model_type": "qwen3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 163840,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.625
+    },
+    "parameters": 14000000000.0,
+    "inputs": "L=40; Hkv=8; dh=128"
+  },
+  {
+    "repo": "Qwen/Qwen3-235B-A22B",
+    "model_type": "qwen3_moe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 192512,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.734375
+    },
+    "parameters": 235093634560,
+    "inputs": "L=94; Hkv=4; dh=128"
+  },
+  {
+    "repo": "Qwen/Qwen3-30B-A3B",
+    "model_type": "qwen3_moe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 98304,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.375
+    },
+    "parameters": 30000000000.0,
+    "inputs": "L=48; Hkv=4; dh=128"
+  },
+  {
+    "repo": "Qwen/Qwen3-32B",
+    "model_type": "qwen3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 262144,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.0
+    },
+    "parameters": 32000000000.0,
+    "inputs": "L=64; Hkv=8; dh=128"
+  },
+  {
+    "repo": "Qwen/Qwen3-4B",
+    "model_type": "qwen3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 147456,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5625
+    },
+    "parameters": 4000000000.0,
+    "inputs": "L=36; Hkv=8; dh=128"
+  },
+  {
+    "repo": "Qwen/Qwen3-8B",
+    "model_type": "qwen3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 147456,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5625
+    },
+    "parameters": 8000000000.0,
+    "inputs": "L=36; Hkv=8; dh=128"
+  },
+  {
+    "repo": "Qwen/Qwen3-Embedding-0.6B",
+    "model_type": "qwen3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 114688,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.4375
+    },
+    "parameters": 595776512,
+    "inputs": "L=28; Hkv=8; dh=128"
+  },
+  {
+    "repo": "Qwen/Qwen3-VL-8B-Instruct",
+    "model_type": "qwen3_vl_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 147456,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5625
+    },
+    "parameters": 8767123696,
+    "inputs": "L=36; Hkv=8; dh=128"
+  },
+  {
+    "repo": "Qwen/Qwen3.5-4B",
+    "model_type": "qwen3_5_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "G",
+    "example": {
+      "token_bytes": 32768,
+      "state_bytes": 51511296,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.1729736328125
+    },
+    "parameters": 4659865088,
+    "inputs": "L=32; full=8; recurrent=24"
+  },
+  {
+    "repo": "Qwen/Qwen3.5-9B",
+    "model_type": "qwen3_5_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "G",
+    "example": {
+      "token_bytes": 32768,
+      "state_bytes": 51511296,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.1729736328125
+    },
+    "parameters": 9653104368,
+    "inputs": "L=32; full=8; recurrent=24"
+  },
+  {
+    "repo": "Qwen/Qwen3.8-27B",
+    "model_type": "qwen3_5_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "G",
+    "example": {
+      "token_bytes": 65536,
+      "state_bytes": 153944064,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.39337158203125
+    },
+    "parameters": 27781427952,
+    "inputs": "L=64; full=16; recurrent=48"
+  },
+  {
+    "repo": "Wan-AI/Wan2.1-I2V-14B-480P",
+    "model_type": "i2v",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 16394878784,
+    "required_calculation": "生成管线：按分辨率/帧数/步数计算编码器、去噪器及激活峰值"
+  },
+  {
+    "repo": "Wan-AI/Wan2.1-I2V-14B-480P-Diffusers",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Wan-AI/Wan2.1-I2V-14B-720P-Diffusers",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Wan-AI/Wan2.1-T2V-1.3B",
+    "model_type": "t2v",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 1418996800,
+    "required_calculation": "生成管线：按分辨率/帧数/步数计算编码器、去噪器及激活峰值"
+  },
+  {
+    "repo": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Wan-AI/Wan2.1-T2V-14B",
+    "model_type": "t2v",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 14288491584,
+    "required_calculation": "生成管线：按分辨率/帧数/步数计算编码器、去噪器及激活峰值"
+  },
+  {
+    "repo": "Wan-AI/Wan2.1-T2V-14B-Diffusers",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Wan-AI/Wan2.1-VACE-14B",
+    "model_type": "vace",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 17337592896,
+    "required_calculation": "生成管线：按分辨率/帧数/步数计算编码器、去噪器及激活峰值"
+  },
+  {
+    "repo": "Wan-AI/Wan2.2-Animate-14B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 17274817108,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Wan-AI/Wan2.2-T2V-A14B-Diffusers",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-7B-Base",
+    "model_type": "mimo",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 147456,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5625
+    },
+    "parameters": 7833409536,
+    "inputs": "L=36; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-7B-RL",
+    "model_type": "mimo",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 147456,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5625
+    },
+    "parameters": 7833409536,
+    "inputs": "L=36; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-Audio-Tokenizer",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 1295799574,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-V2-Flash",
+    "model_type": "mimo_v2_flash",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 222720,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.849609375
+    },
+    "parameters": null,
+    "inputs": "9×full(Hkv=4,dk=192,dv=128); 39×SW(Hkv=8,dk=192,dv=128)"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-V2.5",
+    "model_type": "mimo_v2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 222720,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.849609375
+    },
+    "parameters": null,
+    "inputs": "9×full(Hkv=4,dk=192,dv=128); 39×SW(Hkv=8,dk=192,dv=128)"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-V2.5-ASR",
+    "model_type": "qwen2",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 8018587648,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-V2.5-Pro",
+    "model_type": "mimo_v2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 358400,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.3671875
+    },
+    "parameters": null,
+    "inputs": "10×full(Hkv=8,dk=192,dv=128); 60×SW(Hkv=8,dk=192,dv=128)"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-V2.6-Distill-Qwen-9B",
+    "model_type": "qwen3_5_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "G",
+    "example": {
+      "token_bytes": 32768,
+      "state_bytes": 51511296,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.1729736328125
+    },
+    "parameters": 9409813744,
+    "inputs": "L=32; full=8; recurrent=24"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-V2.6-Flash-MOPD",
+    "model_type": "mimo_v2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 222720,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.849609375
+    },
+    "parameters": null,
+    "inputs": "9×full(Hkv=4,dk=192,dv=128); 39×SW(Hkv=8,dk=192,dv=128)"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-V2.6-Flash-RL",
+    "model_type": "mimo_v2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 222720,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.849609375
+    },
+    "parameters": null,
+    "inputs": "9×full(Hkv=4,dk=192,dv=128); 39×SW(Hkv=8,dk=192,dv=128)"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-V2.6-Pro-MOPD",
+    "model_type": "mimo_v2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 358400,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.3671875
+    },
+    "parameters": null,
+    "inputs": "10×full(Hkv=8,dk=192,dv=128); 60×SW(Hkv=8,dk=192,dv=128)"
+  },
+  {
+    "repo": "XiaomiMiMo/MiMo-V2.6-Pro-RL",
+    "model_type": "mimo_v2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 358400,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.3671875
+    },
+    "parameters": 1020000000000.0,
+    "inputs": "10×full(Hkv=8,dk=192,dv=128); 60×SW(Hkv=8,dk=192,dv=128)"
+  },
+  {
+    "repo": "allenai/OLMo-2-0425-1B",
+    "model_type": "olmo2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 1484916736,
+    "inputs": "L=16; Hkv=16; dh=128"
+  },
+  {
+    "repo": "allenai/OLMo-2-1124-7B",
+    "model_type": "olmo2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 524288,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 2.0
+    },
+    "parameters": 7298617344,
+    "inputs": "L=32; Hkv=32; dh=128"
+  },
+  {
+    "repo": "allenai/OLMoE-1B-7B-0125-Instruct",
+    "model_type": "olmoe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 6919161856,
+    "inputs": "L=16; Hkv=16; dh=128"
+  },
+  {
+    "repo": "allenai/OLMoE-1B-7B-0924",
+    "model_type": "olmoe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 6919161856,
+    "inputs": "L=16; Hkv=16; dh=128"
+  },
+  {
+    "repo": "allenai/Olmo-3-1025-7B",
+    "model_type": "olmo3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 524288,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 2.0
+    },
+    "parameters": 7298011136,
+    "inputs": "L=32; Hkv=32; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "allenai/Olmo-3-7B-Instruct",
+    "model_type": "olmo3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 524288,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 2.0
+    },
+    "parameters": 7298011136,
+    "inputs": "L=32; Hkv=32; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "allenai/Olmo-3-7B-Think",
+    "model_type": "olmo3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 524288,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 2.0
+    },
+    "parameters": 7298011136,
+    "inputs": "L=32; Hkv=32; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "allenai/longformer-base-4096",
+    "model_type": "longformer",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "allenai/scibert_scivocab_uncased",
+    "model_type": "bert",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "allenai/specter2_base",
+    "model_type": "bert",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "allenai/unifiedqa-t5-small",
+    "model_type": "t5",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码器-解码器：编码工作集、自注意力KV与交叉注意力KV分别计账"
+  },
+  {
+    "repo": "allenai/wildguard",
+    "model_type": "mistral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 7248031744,
+    "inputs": "L=32; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan-13B-Base",
+    "model_type": "baichuan",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan-13B-Chat",
+    "model_type": "baichuan",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan-7B",
+    "model_type": "baichuan",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan-M1-14B-Instruct",
+    "model_type": "baichuan_m1",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 14470764320,
+    "required_calculation": "特殊逐层/复用路径：核对层表、状态复用及缓存寿命"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan-M2-32B",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 262144,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.0
+    },
+    "parameters": 32763876352,
+    "inputs": "L=64; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan-M2-32B-Q4_K_M-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan-M3-235B",
+    "model_type": "qwen3_moe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 192512,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.734375
+    },
+    "parameters": 235093634560,
+    "inputs": "L=94; Hkv=4; dh=128"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan-M3-235B-GPTQ-INT4",
+    "model_type": "qwen3_moe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 192512,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.734375
+    },
+    "parameters": null,
+    "inputs": "L=94; Hkv=4; dh=128"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan2-13B-Base",
+    "model_type": "baichuan",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan2-13B-Chat",
+    "model_type": "baichuan",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan2-7B-Base",
+    "model_type": "baichuan",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "baichuan-inc/Baichuan2-7B-Chat",
+    "model_type": "baichuan",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "baidu/ERNIE-4.5-0.3B-Base-PT",
+    "model_type": "ernie4_5",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 18432,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.0703125
+    },
+    "parameters": 360748032,
+    "inputs": "L=18; Hkv=2; dh=128"
+  },
+  {
+    "repo": "baidu/ERNIE-4.5-0.3B-PT",
+    "model_type": "ernie4_5",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 18432,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.0703125
+    },
+    "parameters": 360748032,
+    "inputs": "L=18; Hkv=2; dh=128"
+  },
+  {
+    "repo": "baidu/ERNIE-4.5-21B-A3B-PT",
+    "model_type": "ernie4_5_moe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 57344,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.21875
+    },
+    "parameters": 21948655808,
+    "inputs": "L=28; Hkv=4; dh=128"
+  },
+  {
+    "repo": "baidu/ERNIE-4.5-21B-A3B-Thinking",
+    "model_type": "ernie4_5_moe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 57344,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.21875
+    },
+    "parameters": 21825437888,
+    "inputs": "L=28; Hkv=4; dh=128"
+  },
+  {
+    "repo": "baidu/ERNIE-4.5-300B-A47B-PT",
+    "model_type": "ernie4_5_moe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 221184,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.84375
+    },
+    "parameters": 300474051776,
+    "inputs": "L=54; Hkv=8; dh=128"
+  },
+  {
+    "repo": "baidu/ERNIE-4.5-VL-28B-A3B-PT",
+    "model_type": "ernie4_5_moe_vl",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 29399294336,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "baidu/ERNIE-4.5-VL-28B-A3B-Thinking",
+    "model_type": "ernie4_5_moe_vl",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 29664059776,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "baidu/ERNIE-4.5-VL-424B-A47B-PT",
+    "model_type": "ernie4_5_moe_vl",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 423526285184,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "baidu/ERNIE-Image",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "baidu/ERNIE-Image-Turbo",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "baidu/Qianfan-OCR",
+    "model_type": "qwen3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 147456,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5625
+    },
+    "parameters": 4741408256,
+    "inputs": "L=36; Hkv=8; dh=128"
+  },
+  {
+    "repo": "baidu/Unlimited-OCR",
+    "model_type": "unlimited_ocr",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 3336106240,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.1-Fill-dev",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.1-Kontext-dev",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.1-dev",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.1-schnell",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.2-dev",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.2-klein-4B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.2-klein-4b-fp8",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.2-klein-9B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.2-klein-base-4B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.2-klein-base-4b-fp8",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.2-klein-base-9B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "black-forest-labs/FLUX.2-small-decoder",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 152693931,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct",
+    "model_type": "deepseek_v2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 31104,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.12050628662109375
+    },
+    "parameters": 15706484224,
+    "inputs": "L=27; latent=512; RoPE=64"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-OCR",
+    "model_type": "deepseek_vl_v2",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 3336106240,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-OCR-2",
+    "model_type": "deepseek_vl_v2",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 3389119360,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-R1",
+    "model_type": "deepseek_v3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 70272,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.27225494384765625
+    },
+    "parameters": null,
+    "inputs": "L=61; latent=512; RoPE=64"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 28672,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.109375
+    },
+    "parameters": 1777088000,
+    "inputs": "L=28; Hkv=2; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 196608,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.75
+    },
+    "parameters": 14000000000.0,
+    "inputs": "L=48; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 262144,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.0
+    },
+    "parameters": 32000000000.0,
+    "inputs": "L=64; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 57344,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.21875
+    },
+    "parameters": 7000000000.0,
+    "inputs": "L=28; Hkv=4; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-V3",
+    "model_type": "deepseek_v3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 70272,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.27225494384765625
+    },
+    "parameters": null,
+    "inputs": "L=61; latent=512; RoPE=64"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-V3-0324",
+    "model_type": "deepseek_v3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 70272,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.27225494384765625
+    },
+    "parameters": null,
+    "inputs": "L=61; latent=512; RoPE=64"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-V3.2",
+    "model_type": "deepseek_v32",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "E",
+    "example": {
+      "token_bytes": 86132,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.33370137214660645
+    },
+    "parameters": null,
+    "inputs": "L=61; latent=512; RoPE=64; index=128"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-V4-Flash",
+    "model_type": "deepseek_v4",
+    "status": "upstream_recipe",
+    "missing": [],
+    "category": "R",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "专用压缩/混合路径：核对压缩、索引或状态布局及附加模块，不能沿用普通KV"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "model_type": "deepseek_v4",
+    "status": "upstream_recipe",
+    "missing": [],
+    "category": "R",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "专用压缩/混合路径：核对压缩、索引或状态布局及附加模块，不能沿用普通KV"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-V4-Pro",
+    "model_type": "deepseek_v4",
+    "status": "upstream_recipe",
+    "missing": [],
+    "category": "R",
+    "example": null,
+    "parameters": 1600000000000.0,
+    "required_calculation": "专用压缩/混合路径：核对压缩、索引或状态布局及附加模块，不能沿用普通KV"
+  },
+  {
+    "repo": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "model_type": "deepseek_v41_text",
+    "status": "upstream_recipe",
+    "missing": [],
+    "category": "R",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "专用压缩/混合路径：核对压缩、索引或状态布局及附加模块，不能沿用普通KV"
+  },
+  {
+    "repo": "deepseek-ai/deepseek-coder-7b-instruct-v1.5",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 491520,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.875
+    },
+    "parameters": 6910365696,
+    "inputs": "L=30; Hkv=32; dh=128"
+  },
+  {
+    "repo": "fishaudio/drama-3",
+    "model_type": "fish_omni_text",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "fishaudio/drama-3-int4",
+    "model_type": "fish_omni_text",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "fishaudio/fish-agent-v0.1-3b",
+    "model_type": "dual_ar",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "fishaudio/fish-speech-1",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "fishaudio/fish-speech-1.2",
+    "model_type": "dual_ar",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "fishaudio/fish-speech-1.2-sft",
+    "model_type": "dual_ar",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "fishaudio/fish-speech-1.4",
+    "model_type": "dual_ar",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "fishaudio/fish-speech-1.5",
+    "model_type": "dual_ar",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "fishaudio/s1-mini",
+    "model_type": "dual_ar",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "fishaudio/s2-pro",
+    "model_type": "fish_qwen3",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 4561852416,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "fishaudio/speech-lm-v1",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "google/electra-base-discriminator",
+    "model_type": "electra",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "google/embeddinggemma-300m",
+    "model_type": "gemma3_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 24576,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.09375
+    },
+    "parameters": 307581696,
+    "inputs": "L=24; Hkv=1; dh=256; SW全历史上界"
+  },
+  {
+    "repo": "google/gemma-3-12b-it",
+    "model_type": "gemma3_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 368640,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.40625
+    },
+    "parameters": 12187325040,
+    "inputs": "L=48; Hkv=8; dh=240; SW全历史上界"
+  },
+  {
+    "repo": "google/gemma-3-1b-it",
+    "model_type": "gemma3_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 26624,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.1015625
+    },
+    "parameters": 999885952,
+    "inputs": "L=26; Hkv=1; dh=256; SW全历史上界"
+  },
+  {
+    "repo": "google/gemma-3-27b-it",
+    "model_type": "gemma3_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 507904,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.9375
+    },
+    "parameters": 27000000000.0,
+    "inputs": "L=62; Hkv=16; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "google/gemma-3-4b-it",
+    "model_type": "gemma3_text",
+    "status": "metadata_required",
+    "missing": [
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 4300079472,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "google/gemma-4-12B-it",
+    "model_type": "gemma4_unified_text",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 11959730224,
+    "required_calculation": "特殊逐层/复用路径：核对层表、状态复用及缓存寿命"
+  },
+  {
+    "repo": "google/gemma-4-26B-A4B-it",
+    "model_type": "gemma4_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 225280,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.859375
+    },
+    "parameters": 25805936206,
+    "inputs": "25×SW(Hkv=8,dk=256,dv=256); 5×full(Hkv=2,dk=512,dv=512)"
+  },
+  {
+    "repo": "google/gemma-4-31B-it",
+    "model_type": "gemma4_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 901120,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 3.4375
+    },
+    "parameters": 31000000000.0,
+    "inputs": "50×SW(Hkv=16,dk=256,dv=256); 10×full(Hkv=4,dk=512,dv=512)"
+  },
+  {
+    "repo": "google/gemma-4-E2B-it",
+    "model_type": "gemma4_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 43008,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.1640625
+    },
+    "parameters": 5123178051,
+    "inputs": "28×SW(Hkv=1,dk=256,dv=256); 7×full(Hkv=1,dk=512,dv=512)"
+  },
+  {
+    "repo": "google/gemma-4-E4B-it",
+    "model_type": "gemma4_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 100352,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.3828125
+    },
+    "parameters": 7996156490,
+    "inputs": "35×SW(Hkv=2,dk=256,dv=256); 7×full(Hkv=2,dk=512,dv=512)"
+  },
+  {
+    "repo": "google/owlv2-base-patch16-ensemble",
+    "model_type": "owlv2_text_model",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 154966792,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "google/siglip2-base-patch16-224",
+    "model_type": "siglip_text_model",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 375187970,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "google/siglip2-giant-opt-patch16-384",
+    "model_type": "siglip_text_model",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 1871885426,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "google/vit-base-patch16-224",
+    "model_type": "vit",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 86567656,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "ibm-granite/granite-3.3-2b-instruct",
+    "model_type": "granite",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 81920,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.3125
+    },
+    "parameters": 2533539840,
+    "inputs": "L=40; Hkv=8; dh=64"
+  },
+  {
+    "repo": "ibm-granite/granite-4.1-30b",
+    "model_type": "granite",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 262144,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.0
+    },
+    "parameters": 28865728512,
+    "inputs": "L=64; Hkv=8; dh=128"
+  },
+  {
+    "repo": "ibm-granite/granite-4.1-3b",
+    "model_type": "granite",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 81920,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.3125
+    },
+    "parameters": 3402836480,
+    "inputs": "L=40; Hkv=8; dh=64"
+  },
+  {
+    "repo": "ibm-granite/granite-4.2-30b-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "ibm-granite/granite-4.2-3b-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "ibm-granite/granite-4.2-8b-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "ibm-granite/granite-docling-258M",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 23040,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.087890625
+    },
+    "parameters": 257517120,
+    "inputs": "L=30; Hkv=3; dh=64"
+  },
+  {
+    "repo": "ibm-granite/granite-embedding-small-english-r2",
+    "model_type": "modernbert",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 47662464,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "ibm-granite/granite-timeseries-patchtst-fm-r2",
+    "model_type": "patchtst_fm",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 384600208,
+    "required_calculation": "时序任务：输入窗口、通道、预测长度及前向工作集"
+  },
+  {
+    "repo": "ibm-granite/granite-timeseries-tspulse-r1",
+    "model_type": "tspulse",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 1084330,
+    "required_calculation": "时序任务：输入窗口、通道、预测长度及前向工作集"
+  },
+  {
+    "repo": "ibm-granite/granite-timeseries-ttm-r3",
+    "model_type": "tinytimemixer",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 1414514,
+    "required_calculation": "时序任务：输入窗口、通道、预测长度及前向工作集"
+  },
+  {
+    "repo": "ibm-granite/granite-vision-3.3-2b",
+    "model_type": "granite",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 81920,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.3125
+    },
+    "parameters": 2975396928,
+    "inputs": "L=40; Hkv=8; dh=64"
+  },
+  {
+    "repo": "internlm/Intern-S1",
+    "model_type": "qwen3_moe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 192512,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.734375
+    },
+    "parameters": 240709856128,
+    "inputs": "L=94; Hkv=4; dh=128"
+  },
+  {
+    "repo": "internlm/Intern-S1-mini",
+    "model_type": "qwen3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 147456,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5625
+    },
+    "parameters": 8538804224,
+    "inputs": "L=36; Hkv=8; dh=128"
+  },
+  {
+    "repo": "internlm/internlm-chat-7b",
+    "model_type": "internlm",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "internlm/internlm2-1_8b-reward",
+    "model_type": "internlm2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 98304,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.375
+    },
+    "parameters": 1699581952,
+    "inputs": "L=24; Hkv=8; dh=128"
+  },
+  {
+    "repo": "internlm/internlm2-20b",
+    "model_type": "internlm2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 196608,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.75
+    },
+    "parameters": null,
+    "inputs": "L=48; Hkv=8; dh=128"
+  },
+  {
+    "repo": "internlm/internlm2-7b",
+    "model_type": "internlm2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": null,
+    "inputs": "L=32; Hkv=8; dh=128"
+  },
+  {
+    "repo": "internlm/internlm2-base-20b",
+    "model_type": "internlm2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 196608,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.75
+    },
+    "parameters": null,
+    "inputs": "L=48; Hkv=8; dh=128"
+  },
+  {
+    "repo": "internlm/internlm2-base-7b",
+    "model_type": "internlm2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": null,
+    "inputs": "L=32; Hkv=8; dh=128"
+  },
+  {
+    "repo": "internlm/internlm2-chat-20b",
+    "model_type": "internlm2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 196608,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.75
+    },
+    "parameters": 19861149696,
+    "inputs": "L=48; Hkv=8; dh=128"
+  },
+  {
+    "repo": "internlm/internlm2-chat-7b",
+    "model_type": "internlm2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 7737708544,
+    "inputs": "L=32; Hkv=8; dh=128"
+  },
+  {
+    "repo": "internlm/internlm2_5-7b-chat",
+    "model_type": "internlm2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 7737708544,
+    "inputs": "L=32; Hkv=8; dh=128"
+  },
+  {
+    "repo": "internlm/internlm3-8b-instruct",
+    "model_type": "internlm3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 49152,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.1875
+    },
+    "parameters": 8804241408,
+    "inputs": "L=48; Hkv=2; dh=128"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-2.0",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 1775560491136,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-AudioDiT-1B",
+    "model_type": "audiodit",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 1419923649,
+    "required_calculation": "生成管线：按分辨率/帧数/步数计算编码器、去噪器及激活峰值"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-Flash-Chat",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 561862880256,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-Flash-Lite",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 69073335552,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-Flash-Lite-FP8",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-Flash-Thinking-2601",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 561862880256,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-Image",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 14646655203,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-Image-Dev",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 14646655203,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-Image-Edit",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 14646655203,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-Image-Edit-Turbo",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 8375986339,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-Video",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 20821893381,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meituan-longcat/LongCat-Video-Avatar-1.5",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 35428959184,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Llama-2-7b-chat-hf",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Llama-2-7b-hf",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Llama-3.1-405B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 405000000000.0,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Llama-3.1-405B-FP8",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Llama-3.1-8B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Llama-3.1-8B-Instruct",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 8000000000.0,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Llama-3.2-1B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Llama-3.2-1B-Instruct",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Llama-3.2-3B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Llama-3.2-3B-Instruct",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 3000000000.0,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Llama-3.3-70B-Instruct",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "meta-llama/Prompt-Guard-86M",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "microsoft/Florence-2-base",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 231567705,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "microsoft/Phi-3.5-mini-instruct",
+    "model_type": "phi3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 393216,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.5
+    },
+    "parameters": 3800000000.0,
+    "inputs": "L=32; Hkv=32; dh=96; SW全历史上界"
+  },
+  {
+    "repo": "microsoft/Phi-3.5-vision-instruct",
+    "model_type": "phi3_v",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 4146621440,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "microsoft/Phi-4-mini-instruct",
+    "model_type": "phi3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 3800000000.0,
+    "inputs": "L=32; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "microsoft/TRELLIS-image-large",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "microsoft/TRELLIS.2-4B",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "microsoft/VibeVoice-ASR",
+    "model_type": "vibevoice",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 8674021857,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "microsoft/deberta-v3-base",
+    "model_type": "deberta-v2",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "microsoft/deberta-v3-large",
+    "model_type": "deberta-v2",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "microsoft/deberta-v3-small",
+    "model_type": "deberta-v2",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "microsoft/layoutlmv3-base",
+    "model_type": "layoutlmv3",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 125327490,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "microsoft/mdeberta-v3-base",
+    "model_type": "deberta-v2",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "microsoft/table-transformer-structure-recognition",
+    "model_type": "table-transformer",
+    "status": "metadata_required",
+    "missing": [
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 28847822,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "microsoft/wavlm-large",
+    "model_type": "wavlm",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "mistralai/Devstral-Small-2-24B-Instruct-2512",
+    "model_type": "ministral3",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "mistralai/Mistral-7B-Instruct-v0.1",
+    "model_type": "mistral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 7241732096,
+    "inputs": "L=32; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "mistralai/Mistral-7B-Instruct-v0.2",
+    "model_type": "mistral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 7241732096,
+    "inputs": "L=32; Hkv=8; dh=128"
+  },
+  {
+    "repo": "mistralai/Mistral-7B-Instruct-v0.3",
+    "model_type": "mistral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 7000000000.0,
+    "inputs": "L=32; Hkv=8; dh=128"
+  },
+  {
+    "repo": "mistralai/Mistral-7B-v0.1",
+    "model_type": "mistral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 7241732096,
+    "inputs": "L=32; Hkv=8; dh=128; SW全历史上界"
+  },
+  {
+    "repo": "mistralai/Mistral-7B-v0.3",
+    "model_type": "mistral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 7248023552,
+    "inputs": "L=32; Hkv=8; dh=128"
+  },
+  {
+    "repo": "mistralai/Mistral-Nemo-Instruct-2407",
+    "model_type": "mistral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 163840,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.625
+    },
+    "parameters": 12247782400,
+    "inputs": "L=40; Hkv=8; dh=128"
+  },
+  {
+    "repo": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "model_type": "mistral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 163840,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.625
+    },
+    "parameters": 24011361280,
+    "inputs": "L=40; Hkv=8; dh=128"
+  },
+  {
+    "repo": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+    "model_type": "mistral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 163840,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.625
+    },
+    "parameters": 24011361280,
+    "inputs": "L=40; Hkv=8; dh=128"
+  },
+  {
+    "repo": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "model_type": "mixtral",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 131072,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5
+    },
+    "parameters": 46700000000.0,
+    "inputs": "L=32; Hkv=8; dh=128"
+  },
+  {
+    "repo": "mistralai/Voxtral-Mini-3B-2507",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 122880,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.46875
+    },
+    "parameters": 4676271104,
+    "inputs": "L=30; Hkv=8; dh=128"
+  },
+  {
+    "repo": "mistralai/Voxtral-Mini-4B-Realtime-2602",
+    "model_type": "voxtral_realtime_text",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 8859358720,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "moonshotai/Kimi-K2-Instruct",
+    "model_type": "kimi_k2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 70272,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.27225494384765625
+    },
+    "parameters": null,
+    "inputs": "L=61; latent=512; RoPE=64"
+  },
+  {
+    "repo": "moonshotai/Kimi-K2-Instruct-0905",
+    "model_type": "kimi_k2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 70272,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.27225494384765625
+    },
+    "parameters": null,
+    "inputs": "L=61; latent=512; RoPE=64"
+  },
+  {
+    "repo": "moonshotai/Kimi-K2-Thinking",
+    "model_type": "kimi_k2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 70272,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.27225494384765625
+    },
+    "parameters": null,
+    "inputs": "L=61; latent=512; RoPE=64"
+  },
+  {
+    "repo": "moonshotai/Kimi-K2.5",
+    "model_type": "kimi_k2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 70272,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.27225494384765625
+    },
+    "parameters": 170738182128,
+    "inputs": "L=61; latent=512; RoPE=64"
+  },
+  {
+    "repo": "moonshotai/Kimi-K2.6",
+    "model_type": "kimi_k2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 70272,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.27225494384765625
+    },
+    "parameters": 170738182128,
+    "inputs": "L=61; latent=512; RoPE=64"
+  },
+  {
+    "repo": "moonshotai/Kimi-K2.7-Code",
+    "model_type": "kimi_k2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 70272,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.27225494384765625
+    },
+    "parameters": 170738182128,
+    "inputs": "L=61; latent=512; RoPE=64"
+  },
+  {
+    "repo": "moonshotai/Kimi-K3",
+    "model_type": "kimi_linear",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "F",
+    "example": {
+      "token_bytes": 27648,
+      "state_bytes": 449372160,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5239791870117188
+    },
+    "parameters": 2779931837184,
+    "inputs": "L=93; full=24; recurrent=69"
+  },
+  {
+    "repo": "moonshotai/Kimi-Linear-48B-A3B-Base",
+    "model_type": "kimi_linear",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "F",
+    "example": {
+      "token_bytes": 8064,
+      "state_bytes": 43417600,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.071197509765625
+    },
+    "parameters": 49122681728,
+    "inputs": "L=27; full=7; recurrent=20"
+  },
+  {
+    "repo": "moonshotai/Kimi-Linear-48B-A3B-Instruct",
+    "model_type": "kimi_linear",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "F",
+    "example": {
+      "token_bytes": 8064,
+      "state_bytes": 43417600,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.071197509765625
+    },
+    "parameters": 49122681728,
+    "inputs": "L=27; full=7; recurrent=20"
+  },
+  {
+    "repo": "moonshotai/Kimi-VL-A3B-Instruct",
+    "model_type": "未知",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 16407657776,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "moonshotai/Moonlight-16B-A3B",
+    "model_type": "deepseek_v3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 31104,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.12050628662109375
+    },
+    "parameters": 15960111936,
+    "inputs": "L=27; latent=512; RoPE=64"
+  },
+  {
+    "repo": "moonshotai/Moonlight-16B-A3B-Instruct",
+    "model_type": "deepseek_v3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 31104,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.12050628662109375
+    },
+    "parameters": 15960111936,
+    "inputs": "L=27; latent=512; RoPE=64"
+  },
+  {
+    "repo": "nvidia/Gemma-4-26B-A4B-NVFP4",
+    "model_type": "gemma4_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 225280,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.859375
+    },
+    "parameters": null,
+    "inputs": "25×SW(Hkv=8,dk=256,dv=256); 5×full(Hkv=2,dk=512,dv=512)"
+  },
+  {
+    "repo": "nvidia/Gemma-4-31B-IT-NVFP4",
+    "model_type": "gemma4_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "C",
+    "example": {
+      "token_bytes": 901120,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 3.4375
+    },
+    "parameters": null,
+    "inputs": "50×SW(Hkv=16,dk=256,dv=256); 10×full(Hkv=4,dk=512,dv=512)"
+  },
+  {
+    "repo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+    "model_type": "nemotron_h",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 31577937344,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4",
+    "model_type": "nemotron_h",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 18237772608,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16",
+    "model_type": "nemotron_h",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 3973556832,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
+    "model_type": "nemotron_h",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 123611012096,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+    "model_type": "nemotron_h",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 560524578816,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+    "model_type": "nemotron_h",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "nvidia/Qwen2.5-VL-7B-Instruct-NVFP4",
+    "model_type": "qwen2_5_vl_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 57344,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.21875
+    },
+    "parameters": null,
+    "inputs": "L=28; Hkv=4; dh=128"
+  },
+  {
+    "repo": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+    "model_type": "qwen3_5_moe_text",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "G",
+    "example": {
+      "token_bytes": 20480,
+      "state_bytes": 64389120,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.138092041015625
+    },
+    "parameters": null,
+    "inputs": "L=40; full=10; recurrent=30"
+  },
+  {
+    "repo": "nvidia/bigvgan_v2_22khz_80band_256x",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "nvidia/nemotron-3.5-asr-streaming-0.6b",
+    "model_type": "nemotron3_5_asr",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 637997088,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "openai/clip-vit-base-patch16",
+    "model_type": "clip_text_model",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "openai/clip-vit-base-patch32",
+    "model_type": "clip_text_model",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "openai/clip-vit-large-patch14",
+    "model_type": "clip_text_model",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 427616846,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "openai/clip-vit-large-patch14-336",
+    "model_type": "clip_text_model",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "openai/gpt-oss-120b",
+    "model_type": "gpt_oss",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 73728,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.28125
+    },
+    "parameters": null,
+    "inputs": "L=36; Hkv=8; dh=64; SW全历史上界"
+  },
+  {
+    "repo": "openai/gpt-oss-20b",
+    "model_type": "gpt_oss",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 49152,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.1875
+    },
+    "parameters": null,
+    "inputs": "L=24; Hkv=8; dh=64; SW全历史上界"
+  },
+  {
+    "repo": "openai/privacy-filter",
+    "model_type": "openai_privacy_filter",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 1399486865,
+    "required_calculation": "编码/分类类：前向激活与输出张量；不能按自回归持久KV估算任务峰值"
+  },
+  {
+    "repo": "openai/whisper-base",
+    "model_type": "whisper",
+    "status": "metadata_required",
+    "missing": [
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 72593920,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "openai/whisper-large-v3",
+    "model_type": "whisper",
+    "status": "metadata_required",
+    "missing": [
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 1543490560,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "openai/whisper-large-v3-turbo",
+    "model_type": "whisper",
+    "status": "metadata_required",
+    "missing": [
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 808878080,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "openai/whisper-small",
+    "model_type": "whisper",
+    "status": "metadata_required",
+    "missing": [
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 241734912,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "openai/whisper-tiny",
+    "model_type": "whisper",
+    "status": "metadata_required",
+    "missing": [
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 37760640,
+    "required_calculation": "音频管线：时长/采样率、编码器、解码器/声码器及各阶段峰值"
+  },
+  {
+    "repo": "stabilityai/TripoSR",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stabilityai/sd-turbo",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stabilityai/sd-vae-ft-mse",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 83653863,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stabilityai/sdxl-turbo",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stabilityai/sdxl-vae",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 167307728,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stabilityai/stable-audio-3-medium",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stabilityai/stable-diffusion-3-medium-diffusers",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stabilityai/stable-diffusion-3.5-large",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stabilityai/stable-diffusion-3.5-medium",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stabilityai/stable-diffusion-xl-base-1.0",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stabilityai/stable-diffusion-xl-refiner-1.0",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stabilityai/stable-video-diffusion-img2vid-xt",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stepfun-ai/GOT-OCR-2.0-hf",
+    "model_type": "qwen2",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 98304,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.375
+    },
+    "parameters": 560528640,
+    "inputs": "L=24; Hkv=16; dh=64"
+  },
+  {
+    "repo": "stepfun-ai/GOT-OCR2_0",
+    "model_type": "GOT",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 716033280,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "stepfun-ai/Step-3.5-Flash",
+    "model_type": "step3p5",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 199384301376,
+    "required_calculation": "特殊逐层/复用路径：核对层表、状态复用及缓存寿命"
+  },
+  {
+    "repo": "stepfun-ai/Step-3.7-Flash",
+    "model_type": "step3p5",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 201365316160,
+    "required_calculation": "特殊逐层/复用路径：核对层表、状态复用及缓存寿命"
+  },
+  {
+    "repo": "stepfun-ai/Step-3.7-Flash-FP8",
+    "model_type": "step3p5",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "特殊逐层/复用路径：核对层表、状态复用及缓存寿命"
+  },
+  {
+    "repo": "stepfun-ai/Step-3.7-Flash-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stepfun-ai/Step-3.7-Flash-NVFP4",
+    "model_type": "step3p5",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "特殊逐层/复用路径：核对层表、状态复用及缓存寿命"
+  },
+  {
+    "repo": "stepfun-ai/Step-Audio-2-mini",
+    "model_type": "未知",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 8315179264,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stepfun-ai/Step-Audio-EditX",
+    "model_type": "step1",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 3529706496,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "stepfun-ai/Step-Audio-R1.1",
+    "model_type": "未知",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 33487033600,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "stepfun-ai/Step3-VL-10B",
+    "model_type": "qwen3",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 147456,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.5625
+    },
+    "parameters": 10171750144,
+    "inputs": "L=36; Hkv=8; dh=128"
+  },
+  {
+    "repo": "stepfun-ai/step3",
+    "model_type": "step3_text",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 320969912832,
+    "required_calculation": "专用压缩/混合路径：核对压缩、索引或状态布局及附加模块，不能沿用普通KV"
+  },
+  {
+    "repo": "tencent/Hunyuan-A13B-Instruct",
+    "model_type": "hunyuan_v1_moe",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 80393183232,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "tencent/Hunyuan3D-2",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "tencent/Hunyuan3D-2.1",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "tencent/Hunyuan3D-2mini",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "tencent/HunyuanOCR",
+    "model_type": "hunyuan_vl_text",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 1119925744,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "tencent/Hy-MT2-1.8B",
+    "model_type": "hunyuan_v1_dense",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 2038515712,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "tencent/Hy-MT2-1.8B-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "tencent/Hy-MT2-30B-A3B-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "tencent/Hy-MT2-7B-GGUF",
+    "model_type": "未知",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "hidden_size",
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "未知结构：先获取身份可核对的配置与任务类型"
+  },
+  {
+    "repo": "tencent/Hy3",
+    "model_type": "hy_v3",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 298786155776,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "tencent/Hy3-FP8",
+    "model_type": "hy_v3",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "tencent/Hy3-preview",
+    "model_type": "hy_v3",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 298786155776,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "tiiuae/Falcon-H1-0.5B-Base",
+    "model_type": "falcon_h1",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 521411104,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "tiiuae/Falcon-H1-1.5B-Base",
+    "model_type": "falcon_h1",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 1554859392,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "tiiuae/Falcon-H1-1.5B-Deep-Instruct",
+    "model_type": "falcon_h1",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 1554874768,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "tiiuae/Falcon-H1-3B-Instruct",
+    "model_type": "falcon_h1",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 3149392384,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "tiiuae/Falcon-H1-7B-Instruct",
+    "model_type": "falcon_h1",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 7585654880,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "tiiuae/Falcon3-10B-Instruct",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 163840,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.625
+    },
+    "parameters": 10305653760,
+    "inputs": "L=40; Hkv=4; dh=256"
+  },
+  {
+    "repo": "tiiuae/Falcon3-1B-Instruct",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 73728,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.28125
+    },
+    "parameters": 1669408768,
+    "inputs": "L=18; Hkv=4; dh=256"
+  },
+  {
+    "repo": "tiiuae/Falcon3-7B-Instruct",
+    "model_type": "llama",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "A",
+    "example": {
+      "token_bytes": 114688,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.4375
+    },
+    "parameters": 7455550464,
+    "inputs": "L=28; Hkv=4; dh=256"
+  },
+  {
+    "repo": "tiiuae/falcon-7b",
+    "model_type": "falcon",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 7217189760,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "tiiuae/falcon-7b-instruct",
+    "model_type": "falcon",
+    "status": "metadata_required",
+    "missing": [
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 7217189760,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  },
+  {
+    "repo": "tiiuae/falcon-mamba-7b",
+    "model_type": "falcon_mamba",
+    "status": "metadata_required",
+    "missing": [
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 7272665088,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "tiiuae/falcon-mamba-tiny-dev",
+    "model_type": "falcon_mamba",
+    "status": "metadata_required",
+    "missing": [
+      "num_attention_heads",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": 8765056,
+    "required_calculation": "状态空间/混合：逐层循环矩阵、卷积历史及注意力KV；核对状态精度"
+  },
+  {
+    "repo": "zai-org/GLM-4.1V-9B-Thinking",
+    "model_type": "glm4v_text",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 10292777472,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "zai-org/GLM-4.5",
+    "model_type": "glm4_moe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 376832,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 1.4375
+    },
+    "parameters": 358337791296,
+    "inputs": "L=92; Hkv=8; dh=128"
+  },
+  {
+    "repo": "zai-org/GLM-4.5-Air",
+    "model_type": "glm4_moe",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "B",
+    "example": {
+      "token_bytes": 188416,
+      "state_bytes": 0,
+      "extra_tail_tokens": 0,
+      "cache_gib": 0.71875
+    },
+    "parameters": 110468824832,
+    "inputs": "L=46; Hkv=8; dh=128"
+  },
+  {
+    "repo": "zai-org/GLM-4.7-Flash",
+    "model_type": "glm4_moe_lite",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "D",
+    "example": {
+      "token_bytes": 54144,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.20977020263671875
+    },
+    "parameters": 31221488576,
+    "inputs": "L=47; latent=512; RoPE=64"
+  },
+  {
+    "repo": "zai-org/GLM-5",
+    "model_type": "glm_moe_dsa",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "E",
+    "example": {
+      "token_bytes": 110136,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.4267001152038574
+    },
+    "parameters": 753864139008,
+    "inputs": "L=78; latent=512; RoPE=64; index=128"
+  },
+  {
+    "repo": "zai-org/GLM-5.1",
+    "model_type": "glm_moe_dsa",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "E",
+    "example": {
+      "token_bytes": 110136,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.4267001152038574
+    },
+    "parameters": 753864139008,
+    "inputs": "L=78; latent=512; RoPE=64; index=128"
+  },
+  {
+    "repo": "zai-org/GLM-5.2",
+    "model_type": "glm_moe_dsa",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "E",
+    "example": {
+      "token_bytes": 110136,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.4267001152038574
+    },
+    "parameters": 753329940480,
+    "inputs": "L=78; latent=512; RoPE=64; index=128"
+  },
+  {
+    "repo": "zai-org/GLM-5.2-FP8",
+    "model_type": "glm_moe_dsa",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "E",
+    "example": {
+      "token_bytes": 110136,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.4267001152038574
+    },
+    "parameters": null,
+    "inputs": "L=78; latent=512; RoPE=64; index=128"
+  },
+  {
+    "repo": "zai-org/GLM-5.3",
+    "model_type": "glm_moe_dsa",
+    "status": "analytic_unverified",
+    "missing": [],
+    "category": "E",
+    "example": {
+      "token_bytes": 110136,
+      "state_bytes": 0,
+      "extra_tail_tokens": 64,
+      "cache_gib": 0.4267001152038574
+    },
+    "parameters": null,
+    "inputs": "L=78; latent=512; RoPE=64; index=128"
+  },
+  {
+    "repo": "zai-org/GLM-5.3-Flash",
+    "model_type": "glm5_next_text",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "专用压缩/混合路径：核对压缩、索引或状态布局及附加模块，不能沿用普通KV"
+  },
+  {
+    "repo": "zai-org/GLM-5.3-Flash-BF16",
+    "model_type": "glm5_next_text",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 321323031390,
+    "required_calculation": "专用压缩/混合路径：核对压缩、索引或状态布局及附加模块，不能沿用普通KV"
+  },
+  {
+    "repo": "zai-org/GLM-OCR",
+    "model_type": "glm_ocr_text",
+    "status": "adapter_required",
+    "missing": [
+      "逐层缓存/循环状态与后端布局"
+    ],
+    "category": "U",
+    "example": null,
+    "parameters": 1325258240,
+    "required_calculation": "视觉/文档管线：图像尺寸与展开tokens、编码器、解码器及交叉缓存"
+  },
+  {
+    "repo": "zai-org/chatglm2-6b",
+    "model_type": "chatglm",
+    "status": "metadata_required",
+    "missing": [
+      "num_hidden_layers",
+      "num_key_value_heads"
+    ],
+    "category": "M",
+    "example": null,
+    "parameters": null,
+    "required_calculation": "需核对该model_type的头维度、层表、权重与任务峰值；不按名称猜兼容性"
+  }
+]

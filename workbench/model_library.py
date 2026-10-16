@@ -35,7 +35,8 @@ class ModelLibrary:
                 key=result['source']+':'+m['id']
                 self.records[key]={'key':key,'kind':'remote','source':result['source'],'repo':m['id'],
                     'name':m['id'],'parameter_estimate':None,'config':{},'pipeline_tag':m.get('pipeline_tag'),
-                    **self.records.get(key,{})}
+                    **self.records.get(key,{}), 'pipeline_tag':m.get('pipeline_tag'),
+                    'license':m.get('license'),'gated':m.get('gated'),'reported_parameters':m.get('parameters')}
             self.save()
 
     def remember_metadata(self, model):

@@ -204,6 +204,15 @@ class HTTP(unittest.TestCase):
         with self.assertRaises(urllib.error.HTTPError) as e:self.request('/api/start')
         self.assertEqual(e.exception.code,405)
 
+    def test_serving_planner_api_requires_auth_and_records_scenario(self):
+        body={'replica_rps':4,'observed_first_text_p95_s':1,'observed_total_p95_s':20}
+        with self.assertRaises(urllib.error.HTTPError) as e:self.request('/api/serving/plan',body,token=False)
+        self.assertEqual(e.exception.code,401)
+        with self.request('/api/serving/plan',body) as response:
+            report=json.load(response)
+        self.assertEqual(report['normal']['replicas'],4)
+        self.assertEqual(report['resilient']['replicas'],5)
+
     def test_ui_and_scan(self):
         with self.request('/',token=False) as r:self.assertIn(b'MODEL',r.read())
         with self.request('/api/scan',{'path':str(self.model)}) as r:self.assertEqual(json.load(r)['model_type'],'qwen2')

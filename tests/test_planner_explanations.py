@@ -12,7 +12,8 @@ class PlannerExplanationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             lib=ModelLibrary(Path(directory))
             self.assertEqual(lib.list(),[])
-            rows=lib.list(True);sizes=[r['nominal_parameters_b'] for r in rows]
+            rows=lib.list(True);sizes=[r.get('nominal_parameters_b') or 0 for r in rows]
+            self.assertTrue(any(r.get('nominal_parameters_b') is None for r in rows))
             self.assertEqual(sizes,sorted(sizes,reverse=True))
             self.assertGreater(len(rows),7)
             self.assertTrue(all(r['parameter_estimate'] is None for r in rows))
